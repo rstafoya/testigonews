@@ -2,7 +2,11 @@
 <div class="col s3">
 	<div class="row">
 		<div class="col s12">
-			<span style="display: block !important; text-align: center; font-family: sans-serif; font-size: 12px;"><a href="http://espanol.wunderground.com/cgi-bin/findweather/getForecast?query=zmw:00000.63.76005&bannertypeclick=wu_blueglass" title="Guanajuato, México Weather Forecast" target="_blank"><img src="http://weathersticker.wunderground.com/weathersticker/cgi-bin/banner/ban/wxBanner?bannertype=wu_blueglass_metric&airportcode=MMML&ForcedCity=Guanajuato&ForcedState=México&wmo=76005&language=SP" alt="Find more about Weather in Guanajuato, MX"/></a></span>
+			<span style="display: block !important; text-align: center; font-family: sans-serif; font-size: 12px;">
+			<a href="http://espanol.wunderground.com/cgi-bin/findweather/getForecast?query=zmw:00000.63.76005&bannertypeclick=wu_blueglass" title="Guanajuato, México Weather Forecast" target="_blank">
+			<img src="http://weathersticker.wunderground.com/weathersticker/cgi-bin/banner/ban/wxBanner?bannertype=wu_blueglass_metric&airportcode=MMML&ForcedCity=Guanajuato&ForcedState=México&wmo=76005&language=SP" alt="Find more about Weather in Guanajuato, MX"/>
+			</a>
+			</span>
 		</div>
 	</div>
 
