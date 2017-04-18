@@ -19,8 +19,8 @@
 	<div class="col s5">
 		<div class="row">
 			<?php foreach($ultimos as $u):?>
-				<div class="col s6">
-					<a href="/notas/ver/<?=$u['Nota']['id']?>"><img src="<?=$u['Nota']['imagen_de_portada']?>" alt="" class="responsive-img"></a><br><br>
+				<div class="col s6 altura">
+					<a href="/notas/ver/<?=$u['Nota']['id']?>"><img src="<?=$u['Nota']['imagen_de_portada']?>" alt="" class="responsive-img"></a>
 				</div>
 			<?php endforeach;?>
 		</div>
@@ -39,11 +39,12 @@
 							<a href="/categorias/ver/<?=$cat['Categoria']['id']?>"><?=$cat['Categoria']['nombre']?></a>
 						</p>
 					</div>
+					<?php $primero = array_shift($cat['Nota']) ?>
 					<div class="col s7">
-						<a href="/notas/ver/<?=$cat['Nota'][0]['id']?>">
-							<img src="<?=$cat['Nota'][0]['imagen_de_portada']?>" alt="" class="responsive-img">
-							<h5><?=$cat['Nota'][0]['titulo']?></h5>
-							<p><?=$cat['Nota'][0]['resumen']?></p>
+						<a href="/notas/ver/<?=$primero['id']?>">
+							<img src="<?=$primero['imagen_de_portada']?>" alt="" class="responsive-img">
+							<h5><?=$primero['titulo']?></h5>
+							<p><?=$primero['resumen']?></p>
 						</a>
 					</div>
 					<?php foreach($cat['Nota'] as $nota):?>
@@ -53,7 +54,7 @@
 									<div class="col s4">
 										<img src="<?=$nota['imagen_de_portada']?>" alt="" class="responsive-img">
 									</div>
-									<div class="col s8">
+									<div class="col s8 chico">
 										<?=$nota['titulo']?>
 									</div>
 								</a>

@@ -17,7 +17,10 @@
 	$("#NotaFechaDePublicacion").attr('type', 'date');
 	$("#NotaFechaFinal").attr('type', 'date');
 	$("#NotaTitulo").keyup(function(event) {
-		$("#NotaRuta").val($("#NotaTitulo").val().toLowerCase())
+		var ruta = $("#NotaTitulo").val().toLowerCase()
+		ruta = ruta.replace(/[^a-zA-Z ]/g, "");
+		ruta = ruta.replace(/ /g,"_")
+		$("#NotaRuta").val(ruta)
 		$("#NotaRuta").prev().addClass('active');
 	});
 </script>
