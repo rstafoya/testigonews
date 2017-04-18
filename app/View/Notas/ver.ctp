@@ -10,7 +10,5 @@
 			</div>
 		</div>
 	</div>
-	<div class="col s3">
-
-	</div>
+	<?=$this->Element("barralateral")?>
 </div>
