@@ -17,7 +17,9 @@ main a{
 .slider h4{
 	background: rgba(0,0,0,.5);
 }
-
+.comentarios{
+	margin-top: 10em;
+}
 .cake-debug{
 	font-size: 12px;
 	background:yellow;
