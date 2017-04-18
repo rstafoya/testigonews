@@ -10,6 +10,14 @@ main a{
 	color: #A01027;
 }
 
+.indicator-item.active{
+	background: #A01027 !important;
+}
+
+.slider h4{
+	background: rgba(0,0,0,.5);
+}
+
 .cake-debug{
 	font-size: 12px;
 	background:yellow;

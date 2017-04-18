@@ -11,6 +11,7 @@ class CategoriasController extends AppController {
 		$this->set('categorias', $this->Categoria->find('all'));
 		$this->set('ultimos',$this->Categoria->Nota->find('all',[
 			'limit'=>4,
+			'order'=>'Nota.id desc',
 			]));
 	}
 /***********************************************************/

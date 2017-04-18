@@ -39,12 +39,6 @@
 
 	<div class="row">
 		<div class="col s12">
-			<img src="https://69f27376677fd3d2ee8a-6d51533967eb5b78d02d032b336fea88.ssl.cf2.rackcdn.com/097ca332b65d8b99942a2613d09fecf4.jpeg" alt="" class="responsive-img">
-		</div>
-	</div>
-
-	<div class="row">
-		<div class="col s12">
 			<a class="twitter-timeline" data-lang="es" data-height="600" data-theme="light" href="https://twitter.com/Dios_Padre">Tweets by Dios_Padre</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 		</div>
 	</div>

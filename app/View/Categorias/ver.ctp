@@ -6,7 +6,7 @@
 					<a href="/notas/ver/<?=$nota['id']?>">
 						<h4><?=$nota['titulo']?></h4>
 					</a>
-					<img src="https://unsplash.it/1000/400/?random" alt="" class="responsive-img">
+					<img src="<?=$nota['imagen_de_portada']?>" alt="" class="responsive-img">
 					<div><?=nl2br($nota['resumen'])?></div>
 				</div>
 			</div>
