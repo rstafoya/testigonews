@@ -1,0 +1,18 @@
+table.compacto td, table.compacto th{
+	padding: 5px;
+	max-height: 200px;
+	overflow-y: hidden;
+}
+table.bordered{
+	border:1px solid #ddd;
+	margin-top: 1em;
+}
+table th{
+	background: #eee;
+}
+.btn.small{
+	height: 26px;
+	line-height: 26px;
+	font-size: 80%;
+	padding: 0px 1em;
+}
