@@ -55,34 +55,36 @@
 <div class="row">
 	<div class="col s9">
 		<?php foreach ($categorias as $cat):?>
-			<div class="row">
-				<div class="col s12">
-					<p class="titulocategoria">
-						<a href="/categorias/ver/<?=$cat['Categoria']['id']?>"><?=$cat['Categoria']['nombre']?></a>
-					</p>
-				</div>
-				<div class="col s7">
-					<a href="nota.html">
-						<img src="https://unsplash.it/800/600/?random" alt="" class="responsive-img">
-						<h5>Título de la nota</h5>
-						<p>Subtitulo de la nota, si es que tiene</p>
-					</a>
-				</div>
-				<?php foreach($cat['Nota'] as $nota):?>
-					<div class="col s5">
-						<div class="row">
-							<a href="/notas/ver/<?=$nota['id']?>">
-								<div class="col s3">
-									<img src="http://unsplash.it/400/300/?random" alt="" class="responsive-img">
-								</div>
-								<div class="col s9">
-									<?=$nota['titulo']?>
-								</div>
-							</a>
-						</div>
+			<?php if(isset($cat['Nota'][0])): ?>
+				<div class="row">
+					<div class="col s12">
+						<p class="titulocategoria">
+							<a href="/categorias/ver/<?=$cat['Categoria']['id']?>"><?=$cat['Categoria']['nombre']?></a>
+						</p>
 					</div>
-				<?php endforeach; ?>
-			</div>
+					<div class="col s7">
+						<a href="nota.html">
+							<img src="https://unsplash.it/800/600/?random" alt="" class="responsive-img">
+							<h5>Título de la nota</h5>
+							<p>Subtitulo de la nota, si es que tiene</p>
+						</a>
+					</div>
+					<?php foreach($cat['Nota'] as $nota):?>
+						<div class="col s5">
+							<div class="row">
+								<a href="/notas/ver/<?=$nota['id']?>">
+									<div class="col s3">
+										<img src="http://unsplash.it/400/300/?random" alt="" class="responsive-img">
+									</div>
+									<div class="col s9">
+										<?=$nota['titulo']?>
+									</div>
+								</a>
+							</div>
+						</div>
+					<?php endforeach; ?>
+				</div>
+			<?php endif; ?>
 		<?php endforeach; ?>
 	</div>
 
