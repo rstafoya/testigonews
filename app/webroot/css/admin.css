@@ -10,6 +10,9 @@ table.bordered{
 table th{
 	background: #eee;
 }
+body{
+	background: #eee;
+}
 .btn.small{
 	height: 26px;
 	line-height: 26px;

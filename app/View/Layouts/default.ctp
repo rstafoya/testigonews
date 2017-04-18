@@ -16,7 +16,7 @@
 		<header>
 			<div class="row cabacera">
 				<div class="col s12 center">
-					<img src="/img/logotestigo.png">
+					<a href="/"><img src="/img/logotestigo.png"></a>
 				</div>
 				<div class="col s12">
 					<nav class="colortestigo">
