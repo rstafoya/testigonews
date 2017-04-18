@@ -63,10 +63,10 @@
 						</p>
 					</div>
 					<div class="col s7">
-						<a href="nota.html">
+						<a href="/notas/ver/<?=$cat['Nota'][0]['id']?>">
 							<img src="https://unsplash.it/800/600/?random" alt="" class="responsive-img">
-							<h5>Título de la nota</h5>
-							<p>Subtitulo de la nota, si es que tiene</p>
+							<h5><?=$cat['Nota'][0]['titulo']?></h5>
+							<p><?=$cat['Nota'][0]['resumen']?></p>
 						</a>
 					</div>
 					<?php foreach($cat['Nota'] as $nota):?>
