@@ -16,11 +16,14 @@
 			</ul>
 		</div>
 	</div>
+	<!-- Las mismas noticias, pero en cuadritos -->
 	<div class="col s5">
 		<div class="row">
 			<?php foreach($ultimos as $u):?>
-				<div class="col s6 altura">
-					<a href="/notas/ver/<?=$u['Nota']['id']?>"><img src="<?=$u['Nota']['imagen_de_portada']?>" alt="" class="responsive-img"></a>
+				<div class="col s6">
+					<a class="altura" data-fondo="<?=$u['Nota']['imagen_de_portada']?>" href="/notas/ver/<?=$u['Nota']['id']?>">
+						<span><?=$u['Nota']['titulo']?></span>
+					</a>
 				</div>
 			<?php endforeach;?>
 		</div>

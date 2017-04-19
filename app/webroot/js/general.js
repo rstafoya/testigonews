@@ -1,6 +1,10 @@
 $(document).ready(function(){
 	$(".slider").slider();
 
+	$(".altura").each(function(index, el) {
+		$(this).css('background-image','url('+$(this).data('fondo')+')')
+	});
+
 	while($(".repite").length){
 		$(".repite").each(function(){
 			var html = $(this).html()

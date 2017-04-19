@@ -9,6 +9,10 @@
 	<link rel="stylesheet" href="/css/estilo.css" />
 	<link rel="stylesheet" href="/css/animate.css" />
 
+	<script type="text/javascript" src="/js/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="/js/materialize.min.js"></script>
+	<script type="text/javascript" src="/js/general.js"></script>
+
 	<title><?php echo $this->fetch('title'); ?></title>
 </head>
 <body>
@@ -62,8 +66,5 @@
 
 	<?php echo $this->element('sql_dump'); ?>
 	<?php echo $this->Session->flash(); ?>
-	<script type="text/javascript" src="/js/jquery-2.1.1.min.js"></script>
-	<script type="text/javascript" src="/js/materialize.min.js"></script>
-	<script type="text/javascript" src="/js/general.js"></script>
 </body>
 </html>

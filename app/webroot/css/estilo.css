@@ -72,3 +72,20 @@ h2{
 	margin-top: 3em;
 	text-align: justify;
 }
+
+.altura{
+	background-position: center;
+	background-size: cover;
+	width: 100%;
+	height: 188px;
+	display: block;
+	margin-bottom: 1.5em;
+	color: white;
+	text-align: center;
+}
+.altura span{
+	position: relative;
+	top: 60%;
+	background: rgba(0,0,0,.5);
+	display: block;
+}
