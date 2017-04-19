@@ -26,6 +26,24 @@ class NotasController extends AppController {
 
 	}
 /***********************************************************/
+	public function admin_edit($id=null) {
+		if ($this->request->is('post')) {
+			if($this->Nota->save($this->request->data)){
+				$this->Flash->set("Se ha guardado la nota");
+				$this->redirect("/admin/");
+			} else {
+				$this->Flash->set("Ha ocurrido un error al momento de guardar la nota");
+			}
+		} else {
+			if ($notas = $this->Nota->findById($id)) {
+				$this->set("notas",$notas);
+				$this->set("categorias",$this->Nota->Categoria->find("list"));
+			} else {
+				$this->Flash->set("No se ha encontrado la nota.");
+			}
+		}
+	}
+/***********************************************************/
 	public function ver($id=null) {
 		if ($nota = $this->Nota->findById($id)) {
 			$this->set('nota',$nota);
