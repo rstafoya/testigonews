@@ -1,5 +1,5 @@
 <div class="row">
-	<div class="col s9">
+	<div class="col s12 m9">
 		<div class="row">
 			<div class="col s12">
 				<h4><?=$nota['Nota']['titulo']?></h4>

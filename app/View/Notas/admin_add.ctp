@@ -3,18 +3,34 @@
 		<div class="card">
 			<div class="card-content">
 				<div class="card-title">Agregar nueva nota</div>
-				<?php
-				echo $this->Form->create();
-				echo $this->Form->input("titulo");
-				echo $this->Form->input("ruta");
-				echo $this->Form->input("imagen_de_portada");
-				echo $this->Form->input("resumen");
-				echo $this->Form->input("categoria_id");
-				echo $this->Form->input("contenido",["class"=>"wysiwygeditor"]);
-				echo $this->Form->input("fecha_de_publicacion",['type'=>'text','default'=>date('Y-m-d')]);
-				echo $this->Form->input("fecha_final",['type'=>'text','default'=>'3000-01-01']);
-				echo $this->Form->end(['label'=>'Guardar','class'=>'btn']);
-				?>
+				<?=$this->Form->create()?>
+				<ul class="collapsible popout">
+					<li>
+						<div class="collapsible-header teal lighten-2 white-text">Propiedades de la nota</div>
+						<div class="collapsible-body">
+							<div class="row">
+								<?=$this->Form->input("titulo",['div'=>'col s6'])?>
+								<?=$this->Form->input("ruta",['div'=>'col s6'])?>
+							</div>
+							<div class="row">
+								<?=$this->Form->input("imagen_de_portada",['div'=>'col s6'])?>
+								<?=$this->Form->input("categoria_id",['div'=>'col s6'])?>
+							</div>
+							<div class="row">
+								<?=$this->Form->input("fecha_de_publicacion",['type'=>'text','default'=>date('Y-m-d'),'div'=>'col s6'])?>
+								<?=$this->Form->input("fecha_final",['type'=>'text','default'=>'3000-01-01','div'=>'col s6'])?>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="collapsible-header teal lighten-2 white-text">Contenido</div>
+						<div class="collapsible-body">
+							<?=$this->Form->input("resumen")?>
+							<?=$this->Form->input("contenido",["class"=>"wysiwygeditor"])?>
+						</div>
+					</li>
+				</ul>
+				<?=$this->Form->end(['label'=>'Guardar','class'=>'btn'])?>
 			</div>
 		</div>
 	</div>

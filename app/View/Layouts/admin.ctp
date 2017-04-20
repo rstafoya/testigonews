@@ -12,6 +12,8 @@
 
 	<script type="text/javascript" src="/js/jquery-2.1.1.min.js"></script>
 	<script type="text/javascript" src="/js/materialize.min.js"></script>
+	<script type="text/javascript" src="/js/admin.js"></script>
+	<script type="text/javascript" src="/js/trumbowyg.min.js"></script>
 	<title>Administrador del sistema</title>
 </head>
 <body>
@@ -30,10 +32,5 @@
 	<div class="container"><?php echo $this->fetch('content'); ?></div>
 
 	<?php echo $this->Session->flash(); ?>
-	<script type="text/javascript" src="/js/admin.js"></script>
-	<script type="text/javascript" src="/js/trumbowyg.min.js"></script>
-	<script>
-		$(".wysiwygeditor").trumbowyg();
-	</script>
 </body>
 </html>

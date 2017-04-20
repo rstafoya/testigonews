@@ -1,5 +1,5 @@
 
-<div class="col s3">
+<div class="col m3 hide-on-small-only">
 	<div class="row">
 		<div class="col s12">
 			<span style="display: block !important; text-align: center; font-family: sans-serif; font-size: 12px;">

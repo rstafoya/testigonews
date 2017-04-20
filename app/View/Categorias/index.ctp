@@ -1,6 +1,6 @@
 <!--    Galería de las últimas cuatro notas    -->
 <div class="row">
-	<div class="col s7">
+	<div class="col m7 s12">
 		<div class="slider">
 			<ul class="slides">
 				<?php foreach($ultimos as $u):?>
@@ -17,7 +17,7 @@
 		</div>
 	</div>
 	<!-- Las mismas noticias, pero en cuadritos -->
-	<div class="col s5">
+	<div class="col m5 hide-on-small-only">
 		<div class="row">
 			<?php foreach($ultimos as $u):?>
 				<div class="col s6">
@@ -33,7 +33,7 @@
 <!--                Listado de categorías                 -->
 
 <div class="row">
-	<div class="col s9">
+	<div class="col m9 s12">
 		<?php foreach ($categorias as $cat):?>
 			<?php if(isset($cat['Nota'][0])): ?>
 				<div class="row">
@@ -42,16 +42,15 @@
 							<a href="/categorias/ver/<?=$cat['Categoria']['id']?>"><?=$cat['Categoria']['nombre']?></a>
 						</p>
 					</div>
-					<?php $primero = array_shift($cat['Nota']) ?>
-					<div class="col s7">
-						<a href="/notas/ver/<?=$primero['id']?>">
-							<img src="<?=$primero['imagen_de_portada']?>" alt="" class="responsive-img">
+					<!-- PRIMERA NOTA; LA MAS GRANDE -->
+					<?php $primero = $cat['Nota'][0] ?>
+					<div class="col m7 hide-on-small-only">
+						<a href="/notas/ver/<?=$primero['id']?>" class="altura" data-fondo="<?=$primero['imagen_de_portada']?>" style="height: 400px">
 							<h5><?=$primero['titulo']?></h5>
-							<p><?=$primero['resumen']?></p>
 						</a>
 					</div>
 					<?php foreach($cat['Nota'] as $nota):?>
-						<div class="col s5">
+						<div class="col m5 notitas">
 							<div class="row">
 								<a href="/notas/ver/<?=$nota['id']?>">
 									<div class="col s4">

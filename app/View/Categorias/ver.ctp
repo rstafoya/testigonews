@@ -1,5 +1,5 @@
 <div class="row">
-	<div class="col s9">
+	<div class="col m9 s12">
 		<?php foreach($data['Nota'] as $nota):?>
 			<div class="row">
 				<div class="col s12">

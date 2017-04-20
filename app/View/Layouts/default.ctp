@@ -20,7 +20,7 @@
 		<header>
 			<div class="row cabacera">
 				<div class="col s12 center">
-					<a href="/"><img src="/img/logotestigo.png"></a>
+					<a href="/"><img class="responsive-img" src="/img/logotestigo.png"></a>
 				</div>
 				<div class="col s12">
 					<nav class="colortestigo">
@@ -55,10 +55,9 @@
 		</main>
 
 		<footer>
-			<div class="row repite white-text" style="background:#001C3C;" data-repite=3>
-				<div class="col s4">
-					<h5>Columna</h5>
-					<p>Lorem ipsum dolor sit amet. Ipsa officiis quasi error aperiam eum suscipit cum laboriosam, eius harum eos aspernatur ea obcaecati vero est veniam nostrum numquam distinctio rerum.</p>
+			<div class="row white-text" style="background:#001C3C;">
+				<div class="col s12">
+					<p class="center">Testigo. Todos los derechos reservados</p>
 				</div>
 			</div>
 		</footer>

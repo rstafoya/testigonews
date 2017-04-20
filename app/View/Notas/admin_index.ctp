@@ -10,7 +10,7 @@
 			</tr>
 			<?php foreach ($notas as $nota): ?>
 				<tr>
-					<td><a href="/admin/notas/ver/"><?=substr($nota['Nota']['titulo'],0,70)?></a></td>
+					<td><a href="/admin/notas/edit/<?=$nota['Nota']['id']?>"><?=substr($nota['Nota']['titulo'],0,70)?></a></td>
 					<td><?=$nota['User']['nombre']?></td>
 					<td><?=$nota['Categoria']['nombre']?></td>
 					<td>

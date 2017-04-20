@@ -19,3 +19,22 @@ body{
 	font-size: 80%;
 	padding: 0px 1em;
 }
+#flashMessage{
+	width: 40%;
+	font-size: 50px;
+	border-radius: 5px;
+	text-align: center;
+	padding: 1em;
+	margin: 160px auto 0px;
+	position: relative;
+	background: white;
+	box-shadow: 0px 3px 3px rgba(0,0,0,.5);
+}
+.sombra{
+	background: rgba(0,0,0,.3);
+	position: fixed;
+	top: 0px;
+	height: 100%;
+	left: 0px;
+	width: 100%;
+}
