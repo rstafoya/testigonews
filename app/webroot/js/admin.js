@@ -3,7 +3,10 @@ $(document).ready(function() {
 	$("form .input").addClass('input-field')
 	$("table").addClass('bordered compacto')
 	$("textarea").addClass('materialize-textarea')
-	$(".wysiwygeditor").trumbowyg();
+	$(".wysiwygeditor").trumbowyg({
+		autogrow:true,
+		lang:'es'
+	});
 	$("#flashMessage").addClass("animated tada").wrap('<div class="sombra"></div>')
 	$(".sombra").click(function(event) {
 		$(this).remove()

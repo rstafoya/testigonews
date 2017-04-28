@@ -27,22 +27,8 @@
 						<div class="nav-wrapper">
 							<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
 							<ul class="left hide-on-med-and-down menucategorias">
-								<li><a href="index.html">Inicio</a></li>
-								<li><a href="categoria.html">Política</a></li>
-								<li><a href="categoria.html">Deportes</a></li>
-								<li><a href="categoria.html">Entretenimiento</a></li>
-								<li><a href="categoria.html">Sucesos</a></li>
-								<li><a href="categoria.html">Editorial semanal</a></li>
-								<li><a href="categoria.html">La entrevista</a></li>
 							</ul>
 							<ul class="side-nav menucategorias" id="mobile-demo">
-								<li><a href="index.html">Inicio</a></li>
-								<li><a href="categoria.html">Política</a></li>
-								<li><a href="categoria.html">Deportes</a></li>
-								<li><a href="categoria.html">Entretenimiento</a></li>
-								<li><a href="categoria.html">Sucesos</a></li>
-								<li><a href="categoria.html">Editorial semanal</a></li>
-								<li><a href="categoria.html">La entrevista</a></li>
 							</ul>
 						</div>
 					</nav>

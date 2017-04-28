@@ -14,6 +14,7 @@
 	<script type="text/javascript" src="/js/materialize.min.js"></script>
 	<script type="text/javascript" src="/js/admin.js"></script>
 	<script type="text/javascript" src="/js/trumbowyg.min.js"></script>
+	<script type="text/javascript" src="/js/es.js"></script>
 	<title>Administrador del sistema</title>
 </head>
 <body>

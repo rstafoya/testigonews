@@ -4,6 +4,7 @@ class CategoriasController extends AppController {
 /***********************************************************/
 	public function beforeFilter() {
 		parent::beforeFilter();
+		$this->Auth->allow('index','ver','ajax_menucategorias');
 	}
 /***********************************************************/
 	public function index() {

@@ -13,8 +13,16 @@ class User extends AppModel {
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+				),
+			'unique' => array(
+				'rule' => array('isUnique'),
+				//'message' => 'Your custom message here',
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Stop validation after this rule
+				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+				),
 			),
-		),
 		'email' => array(
 			'email' => array(
 				'rule' => array('email'),
@@ -23,8 +31,8 @@ class User extends AppModel {
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+				),
 			),
-		),
 		'nombre' => array(
 			'notBlank' => array(
 				'rule' => array('notBlank'),
@@ -33,8 +41,8 @@ class User extends AppModel {
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+				),
 			),
-		),
 		'administrador' => array(
 			'boolean' => array(
 				'rule' => array('boolean'),
@@ -43,9 +51,9 @@ class User extends AppModel {
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+				),
 			),
-		),
-	);
+		);
 
 	public $hasMany = array(
 		'Nota' => array(
@@ -60,7 +68,14 @@ class User extends AppModel {
 			'exclusive' => '',
 			'finderQuery' => '',
 			'counterQuery' => ''
-		)
-	);
+			)
+		);
 
+
+	public function beforeSave($options = array()) {
+		if (isset($this->data[$this->alias]['password'])) {
+			$this->data[$this->alias]['password'] = AuthComponent::password($this->data[$this->alias]['password']);
+		}
+		return true;
+	}
 }

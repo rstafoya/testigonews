@@ -10,8 +10,9 @@
 						<div class="collapsible-body">
 							<?=$this->Form->input("id",['default'=>$notas['Nota']['id']])?>
 							<div class="row">
-								<?=$this->Form->input("titulo",['default'=>$notas['Nota']['titulo'],'div'=>'col s6'])?>
-								<?=$this->Form->input("ruta",['default'=>$notas['Nota']['ruta'],'div'=>'col s6'])?>
+								<?=$this->Form->input("titulo",['default'=>$notas['Nota']['titulo'],'div'=>'col s4'])?>
+								<?=$this->Form->input("ruta",['default'=>$notas['Nota']['ruta'],'div'=>'col s4'])?>
+								<?=$this->Form->input("user_id",['default'=>$notas['Nota']['user_id'],'div'=>'col s4'])?>
 							</div>
 							<div class="row">
 								<?=$this->Form->input("imagen_de_portada",['default'=>$notas['Nota']['imagen_de_portada'],'div'=>'col s6'])?>

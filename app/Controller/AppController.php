@@ -5,7 +5,7 @@ App::uses('Controller', 'Controller');
 class AppController extends Controller {
 	var $scaffold = 'admin';
 
-	public $components = array('Paginator','Flash');
+	public $components = array('Paginator','Flash','Auth');
 
 	public function beforeFilter(){
 		if (isset($this->request->params['prefix'])) {

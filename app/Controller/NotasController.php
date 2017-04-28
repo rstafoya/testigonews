@@ -4,6 +4,7 @@ class NotasController extends AppController {
 /***********************************************************/
 	public function beforeFilter() {
 		parent::beforeFilter();
+		$this->Auth->allow('ver');
 	}
 /***********************************************************/
 	public function admin_index() {
@@ -38,6 +39,7 @@ class NotasController extends AppController {
 			if ($notas = $this->Nota->findById($id)) {
 				$this->set("notas",$notas);
 				$this->set("categorias",$this->Nota->Categoria->find("list"));
+				$this->set("users",$this->Nota->User->find("list"));
 			} else {
 				$this->Flash->set("No se ha encontrado la nota.");
 			}
