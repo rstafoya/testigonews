@@ -5,9 +5,11 @@
 				<div class="col s12">
 					<a href="/notas/ver/<?=$nota['id']?>">
 						<h4><?=$nota['titulo']?></h4>
+						<img height="400" src="<?=$nota['imagen_de_portada']?>" alt="<?=$nota['titulo']?>" class="img-altofijo">
 					</a>
-					<img src="<?=$nota['imagen_de_portada']?>" alt="" class="responsive-img">
-					<div><?=nl2br($nota['resumen'])?></div>
+					<div>
+						<?=nl2br($nota['resumen'])?>
+					</div>
 				</div>
 			</div>
 		<?php endforeach;?>
