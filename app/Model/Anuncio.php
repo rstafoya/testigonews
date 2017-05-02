@@ -3,6 +3,7 @@ App::uses('AppModel', 'Model');
 class Anuncio extends AppModel {
 
 	public $displayField = 'nombre';
+	public $order = 'Anuncio.inicio';
 
 	public $validate = array(
 		'nombre' => array(

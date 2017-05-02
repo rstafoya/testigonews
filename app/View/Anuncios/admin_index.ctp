@@ -6,6 +6,7 @@
 				<table>
 					<tr>
 						<th></th>
+						<th></th>
 						<th>Nombre</th>
 						<th>Inicio</th>
 						<th>Final</th>
@@ -30,6 +31,7 @@
 						?>
 						<tr>
 							<td><i class="material-icons <?=$color?>">date_range</i></td>
+							<td><img src="<?=$dat['Anuncio']['imagen']?>" height="30" class="materialboxed"></td>
 							<td><?=$dat['Anuncio']['nombre']?></td>
 							<td><?=$dat['Anuncio']['inicio']?></td>
 							<td><?=$dat['Anuncio']['final']?></td>

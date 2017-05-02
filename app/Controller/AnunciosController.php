@@ -23,7 +23,32 @@
  		$this->set('tipos',$this->Anuncio->Tipo->find('list'));
  	}
  	/***********************************************************/
+ 	public function admin_edit($id = null){
+ 		if (!$data = $this->Anuncio->findById($id)) {
+ 			$this->Flash->set("No se encuentra el anuncio.");
+ 			$this->redirect("/admin/anuncios");
+ 		}
+
+ 		if ($this->request->is("post")) {
+ 			if ($this->Anuncio->save($this->request->data)) {
+ 				$this->Flash->set("Se ha guardado el anuncio");
+ 				$this->redirect("/admin/anuncios");
+ 			} else {
+ 				$this->Flash->set("No se ha podido guardar el anuncio.");
+ 			} 			
+ 		}
+ 		$this->set('tipos',$this->Anuncio->Tipo->find('list')); 		
+ 		$this->set('data',$data); 		
+ 	}
  	/***********************************************************/
+ 	public function admin_delete($id = null){
+ 		if ($this->Anuncio->delete($id)) {
+ 			$this->Flash->set("Se ha borrado el anuncio");
+ 		}else{
+ 			$this->Flash->set("No se ha podido borrar el anuncio"); 			
+ 		}
+ 		$this->redirect('/admin/anuncios');
+ 	}
  	/***********************************************************/
  	/***********************************************************/
  }

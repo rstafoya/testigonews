@@ -9,7 +9,7 @@
 				<?=$this->Form->input('url')?>
 				<?=$this->Form->input('inicio',['type'=>'text','default'=>date('Y-m-d')])?>
 				<?=$this->Form->input('final',['type'=>'text','default'=>date('Y-m-d')])?>
-				<?=$this->Form->input('tipo')?>
+				<?=$this->Form->input('tipo_id')?>
 				<?=$this->Form->end(['label'=>'Agregar','class'=>'btn'])?>
 			</div>
 		</div>

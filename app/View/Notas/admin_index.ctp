@@ -15,7 +15,7 @@
 					<td><?=$nota['Categoria']['nombre']?></td>
 					<td>
 						<a class="btn small" href="/admin/notas/edit/<?=$nota['Nota']['id']?>">Modificar</a>
-						<a class="btn small" href="/admin/notas/delete/<?=$nota['Nota']['id']?>">Eliminar</a>
+						<a class="btn small" href="/admin/notas/delete/<?=$nota['Nota']['id']?>" onclick="return(confirm('¿Está seguro?'))">Eliminar</a>
 					</td>
 				</tr>
 			<?php endforeach ?>
