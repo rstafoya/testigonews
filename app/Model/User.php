@@ -12,11 +12,11 @@ class User extends AppModel {
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+				//'on' => 'create',
 				),
 			'unique' => array(
 				'rule' => array('isUnique'),
-				//'message' => 'Your custom message here',
+				'message' => 'El nombre de usuario debe ser único',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule

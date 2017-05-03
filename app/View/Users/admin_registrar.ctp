@@ -2,7 +2,7 @@
 	<div class="col s12 l6 offset-l3">
 		<div class="card white">
 			<div class="card-content">
-			<div class="card-title">Login</div>
+			<div class="card-title">Registrar nuevo usuario</div>
 				<?=$this->Form->create()?>
 				<?=$this->Form->input('username')?>
 				<?=$this->Form->input('password')?>
