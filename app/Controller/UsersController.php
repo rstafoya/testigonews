@@ -29,6 +29,10 @@ class UsersController extends AppController {
 		}
 	}
 	/**************************************************************************/
+	public function admin_index(){
+		$this->set("data",$this->User->find("all"));
+	}
+	/**************************************************************************/
 	public function logout(){
 		$this->redirect('/');
 	}
