@@ -9,7 +9,7 @@ class Categoria extends AppModel {
 		'nombre' => array(
 			'notBlank' => array(
 				'rule' => array('notBlank'),
-				//'message' => 'Your custom message here',
+				'message' => 'Todas las categorías dben tener un nombre',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -19,7 +19,7 @@ class Categoria extends AppModel {
 		'orden' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
-				//'message' => 'Your custom message here',
+				'message' => 'Este campo se usa para ordenar las categorías en el menú',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule

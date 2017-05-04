@@ -8,7 +8,7 @@ class Nota extends AppModel {
 		'titulo' => array(
 			'notBlank' => array(
 				'rule' => array('notBlank'),
-				//'message' => 'Your custom message here',
+				'message' => 'Tiene que especificar un título para la nota',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -18,7 +18,7 @@ class Nota extends AppModel {
 		'ruta' => array(
 			'notBlank' => array(
 				'rule' => array('notBlank'),
-				//'message' => 'Your custom message here',
+				'message' => 'Ruta es el nombre "amigable" que aparecerá en la dirección',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -28,7 +28,7 @@ class Nota extends AppModel {
 		'imagen_de_portada' => array(
 			'notBlank' => array(
 				'rule' => array('notBlank'),
-				//'message' => 'Your custom message here',
+				'message' => 'Todas las notas deberán incluír una imagen',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -38,7 +38,7 @@ class Nota extends AppModel {
 		'resumen' => array(
 			'notBlank' => array(
 				'rule' => array('notBlank'),
-				//'message' => 'Your custom message here',
+				'message' => 'Escriba uno o dos párrafos que resuman la nota',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -48,7 +48,7 @@ class Nota extends AppModel {
 		'contenido' => array(
 			'notBlank' => array(
 				'rule' => array('notBlank'),
-				//'message' => 'Your custom message here',
+				'message' => 'No puede dejar esto vacío',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -78,7 +78,7 @@ class Nota extends AppModel {
 		'fecha_de_publicacion' => array(
 			'date' => array(
 				'rule' => array('date'),
-				//'message' => 'Your custom message here',
+				'message' => 'La fecha de publicación de la nota',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -88,7 +88,7 @@ class Nota extends AppModel {
 		'fecha_final' => array(
 			'date' => array(
 				'rule' => array('date'),
-				//'message' => 'Your custom message here',
+				'message' => 'Esta es la fecha que se dejará de publicar.',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule

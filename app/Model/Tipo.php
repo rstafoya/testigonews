@@ -8,7 +8,7 @@ class Tipo extends AppModel {
 		'nombre' => array(
 			'notBlank' => array(
 				'rule' => array('notBlank'),
-				//'message' => 'Your custom message here',
+				'message' => 'No puede quedar en blanco',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
