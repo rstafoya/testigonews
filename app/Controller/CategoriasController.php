@@ -70,4 +70,17 @@ class CategoriasController extends AppController {
 		}
 	}
 	/***********************************************************/
+	public function admin_ordenar(){
+		if ($this->request->is("post")) {
+			$this->log(print_r($this->request->data,true));
+			foreach ($this->request->data as $data) {
+				$this->Categoria->save($data);
+			}
+			$this->redirect("/admin/categorias");
+		} else {
+			$this->Categoria->recursive=-1;
+			$this->set("data",$this->Categoria->find("all"));
+		}
+	}
+	/***********************************************************/
 }

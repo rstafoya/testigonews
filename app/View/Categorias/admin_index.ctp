@@ -21,6 +21,7 @@
 			</div>
 			<div class="card-action">
 				<a href="/admin/categorias/add">Agregar una categoría nueva</a>
+				<a href="/admin/categorias/ordenar">Reordenar</a>
 			</div>
 		</div>
 	</div>

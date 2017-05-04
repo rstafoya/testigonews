@@ -11,6 +11,7 @@
 	<link rel="stylesheet" href="/css/trumbowyg.min.css" />
 
 	<script type="text/javascript" src="/js/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="/js/jquery-ui.min.js"></script>
 	<script type="text/javascript" src="/js/materialize.min.js"></script>
 	<script type="text/javascript" src="/js/admin.js"></script>
 	<script type="text/javascript" src="/js/trumbowyg.min.js"></script>
