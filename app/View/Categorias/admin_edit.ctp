@@ -7,7 +7,6 @@
 				<?=$this->Form->input("id",['default'=>$categoria['Categoria']['id']])?>
 				<?=$this->Form->input("nombre",['default'=>$categoria['Categoria']['nombre']])?>
 				<?=$this->Form->input("nombre_amigable",['default'=>$categoria['Categoria']['nombre_amigable']])?>
-				<?=$this->Form->input("orden",['default'=>$categoria['Categoria']['orden']])?>
 				<?=$this->Form->end(["class"=>"btn","label"=>"Guardar"])?>
 			</div>
 		</div>

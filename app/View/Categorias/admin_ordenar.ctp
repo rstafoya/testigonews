@@ -24,7 +24,7 @@ $j=0;
 <script>
 	$(".collection").sortable({update:function(){
 		$(".orden").each(function(index, el) {
-			$(this).val(index)
+			$(this).val(index*10)
 		});
 	}});
 </script>

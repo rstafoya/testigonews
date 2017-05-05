@@ -6,8 +6,11 @@
 				<?=$this->Form->create()?>
 				<?=$this->Form->input('username')?>
 				<?=$this->Form->input('password')?>
-				<?=$this->Form->end(['label'=>'Login','class'=>'btn colortestigo'])?>				
+				<?=$this->Form->end(['label'=>'Login','class'=>'btn colortestigo'])?>
 			</div>
 		</div>
 	</div>
 </div>
+<script>
+	$("#UserUsername").focus()
+</script>
