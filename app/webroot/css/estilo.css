@@ -1,9 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Kreon');
+@import url('https://fonts.googleapis.com/css?family=Lato');
 
 @media only screen and (min-width : 1200px) {
 	.container{
 		width: 1200px;
 	}
+}
+
+p,div,td,th,li{
+	font-family: Lato, helvetica, arial;
+	font-size: 18px;
 }
 
 main a{
@@ -51,7 +57,7 @@ nav{
 }
 .titulocategoria a{
 	color:#001C3C;
-	font-family: Kreon;
+	font-family: Lato, helvetica, arial;
 	font-size: 120%;
 	margin-left: 1em;
 }
