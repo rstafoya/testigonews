@@ -13,7 +13,7 @@ class UsersController extends AppController {
 			if (!$this->Auth->login()) {
 				$this->Flash->set("Usuario o contraseña incorrecta.");
 			}else{
-				$this->redirect('/');
+				$this->redirect('/admin');
 			}
 		}
 	}
@@ -41,7 +41,7 @@ class UsersController extends AppController {
 				$this->redirect("/admin/users");
 			} else {
 				$this->Flash->set("Ha ocurrido un error al momento de guardar");
-			}			
+			}
 		}
 
 		$this->set("data",$data);
@@ -52,14 +52,14 @@ class UsersController extends AppController {
 	}
 	/**************************************************************************/
 	public function logout(){
-		$this->redirect('/');
+		$this->redirect($this->Auth->logout());
 	}
 	/***********************************************************/
 	public function admin_delete($id = null){
 		if ($this->User->delete($id)) {
 			$this->Flash->set("Se ha borrado el usuario");
 		}else{
-			$this->Flash->set("No se ha podido borrar el usuario"); 			
+			$this->Flash->set("No se ha podido borrar el usuario");
 		}
 		$this->redirect('/admin/users');
 	}

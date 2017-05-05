@@ -18,6 +18,10 @@
  */
 	Router::connect('/', array('controller' => 'categorias', 'action' => 'index'));
 	Router::connect('/admin', array('controller' => 'notas', 'action' => 'index', 'prefix'=>'admin'));
+
+	Router::connect('/login', array('controller'=>'users','action'=>'login'));
+	Router::connect('/logout', array('controller'=>'users','action'=>'logout'));
+
 /**
  * ...and connect the rest of 'Pages' controller's URLs.
  */
