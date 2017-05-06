@@ -23,15 +23,7 @@
 					<a href="/"><img class="responsive-img" src="/img/logotestigo.png"></a>
 				</div>
 				<div class="col s12">
-					<nav class="colortestigo">
-						<div class="nav-wrapper">
-							<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-							<ul class="left hide-on-med-and-down menucategorias">
-							</ul>
-							<ul class="side-nav menucategorias" id="mobile-demo">
-							</ul>
-						</div>
-					</nav>
+					<?=file_get_contents('http://localhost:8383/categorias/ajax_menucategorias')?>
 				</div>
 			</div>
 		</header>
@@ -48,8 +40,6 @@
 			</div>
 		</footer>
 	</div>
-
-	<?php echo $this->element('sql_dump'); ?>
 	<?php echo $this->Session->flash(); ?>
 </body>
 </html>

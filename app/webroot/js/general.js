@@ -34,8 +34,4 @@ $(document).ready(function(){
 	}
 
 	$(".button-collapse").sideNav();
-
-	$.get('/categorias/ajax_menucategorias', function(data) {
-		$(".menucategorias").html(data)
-	});
 })
