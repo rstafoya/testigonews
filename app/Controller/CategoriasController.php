@@ -1,4 +1,3 @@
-
 <?php
 App::uses('AppController', 'Controller');
 class CategoriasController extends AppController {
@@ -44,6 +43,9 @@ class CategoriasController extends AppController {
 			$this->set("categoria",$data);
 			$this->Categoria->recursive=-1;
 			$this->set("data",$this->Categoria->find('all'));
+			$this->set("lstCatego",$this->Categoria->find('list',[
+				'conditions'=>'Categoria.padre is null'
+				]));
 		}
 
 		if ($this->request->is("post")) {
