@@ -15,11 +15,18 @@
 			<div class="card-content">
 				<div class="card-title">Listado de categorías actual</div>
 				<table>
+					<tr>
+						<th>Id</th>
+						<th>Orden</th>
+						<th>Nombre</th>
+						<th>Padre</th>
+					</tr>
 					<?php foreach($data as $d):?>
 						<tr>
+							<td><?=$d['Categoria']['id']?></td>
 							<td><?=$d['Categoria']['orden']?></td>
 							<td><?=$d['Categoria']['nombre']?></td>
-							<td><?=$d['Categoria']['nombre_amigable']?></td>
+							<td><?=$d['Categoria']['padre']?></td>
 						</tr>
 					<?php endforeach;?>
 				</table>
