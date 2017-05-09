@@ -34,13 +34,13 @@ function existe($i,$a){
 			<li><a href="/">Inicio</a></li>
 		<?php foreach($menu as $m):?>
 			<?php if(existe($m['Categoria']['id'],$sub)>0):?>
-			<li><a href="#"
+			<li><a href="/categorias/ver/<?=$m['Categoria']['id']?>"
 			class="dropdown-button"
 			data-hover="true"
 			data-induration=0
 			data-beloworigin="true"
 			data-constrainwidth="false"
-			data-activates="submenu<?=$m['Categoria']['id']?>"><?=$m['Categoria']['nombre']?></a></li>
+			data-activates="submenu<?=$m['Categoria']['id']?>"><?=$m['Categoria']['nombre']?><i class="material-icons right" style="position:relative;top:-10px">keyboard_arrow_right</i></a></li>
 			<?php else:?>
 			<li><a href="/categorias/ver/<?=$m['Categoria']['id']?>"><?=$m['Categoria']['nombre']?></a></li>
 			<?php endif;?>
