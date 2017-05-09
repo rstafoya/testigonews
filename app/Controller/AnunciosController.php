@@ -4,6 +4,7 @@ class AnunciosController extends AppController {
 	/***********************************************************/
 	public function beforeFilter() {
 		parent::beforeFilter();
+		$this->Auth->allow('random');
 	}
 	/***********************************************************/
 	public function admin_index(){
@@ -18,7 +19,7 @@ class AnunciosController extends AppController {
 				$this->redirect("/admin/anuncios");
 			} else {
 				$this->Flash->set("Ha ocurrido un problema guardando el anuncio");
-			} 			
+			}
 		}
 		$this->set('tipos',$this->Anuncio->Tipo->find('list'));
 	}
@@ -35,20 +36,28 @@ class AnunciosController extends AppController {
 				$this->redirect("/admin/anuncios");
 			} else {
 				$this->Flash->set("No se ha podido guardar el anuncio.");
-			} 			
+			}
 		}
-		$this->set('tipos',$this->Anuncio->Tipo->find('list')); 		
-		$this->set('data',$data); 		
+		$this->set('tipos',$this->Anuncio->Tipo->find('list'));
+		$this->set('data',$data);
 	}
 	/***********************************************************/
 	public function admin_delete($id = null){
 		if ($this->Anuncio->delete($id)) {
 			$this->Flash->set("Se ha borrado el anuncio");
 		}else{
-			$this->Flash->set("No se ha podido borrar el anuncio"); 			
+			$this->Flash->set("No se ha podido borrar el anuncio");
 		}
 		$this->redirect('/admin/anuncios');
 	}
 	/***********************************************************/
+	public function random($tipo=1){
+		$this->layout='ajax';
+		$this->set("data",$this->Anuncio->find('first',[
+			'order'=>'rand()',
+			'conditions'=>['Anuncio.tipo_id'=>$tipo],
+			'recursive'=>-1
+			]));
+	}
 	/***********************************************************/
 }
