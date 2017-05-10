@@ -20,7 +20,7 @@
 
 	<div class="row">
 		<div class="col s12">
-			<img src="https://s-media-cache-ak0.pinimg.com/originals/b2/80/69/b28069d87f470a84a1c0496c3f17125d.jpg" alt="" class="responsive-img">
+			<?=file_get_contents('http://localhost:8383/anuncios/random/1')?>
 		</div>
 	</div>
 
