@@ -49,6 +49,7 @@ class UsersController extends AppController {
 	/**************************************************************************/
 	public function admin_index(){
 		$this->set("data",$this->User->find("all"));
+		$this->set("administrador",$this->Auth->user("administrador"));
 	}
 	/**************************************************************************/
 	public function logout(){
@@ -56,10 +57,18 @@ class UsersController extends AppController {
 	}
 	/***********************************************************/
 	public function admin_delete($id = null){
-		if ($this->User->delete($id)) {
-			$this->Flash->set("Se ha borrado el usuario");
-		}else{
-			$this->Flash->set("No se ha podido borrar el usuario");
+		if ($data = $this->User->findById($id)) {
+			if ($data['User']['administrador']) {
+				$this->Flash->set("No se pueden eliminar los usuarios administradores.");
+			} else {
+				if ($this->User->delete($id)) {
+					$this->Flash->set("Se ha borrado el usuario");
+				}else{
+					$this->Flash->set("No se ha podido borrar el usuario");
+				}
+			}
+		} else {
+			$this->Flash->set("No se ha podido encontrar el usuario que indicaste.");
 		}
 		$this->redirect('/admin/users');
 	}

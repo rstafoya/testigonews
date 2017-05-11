@@ -16,8 +16,10 @@
 							<td><?=$u['User']['email']?></td>
 							<td><?=$u['User']['administrador']?></td>
 							<td>
-								<a href="/admin/users/edit/<?=$u['User']['id']?>" class="btn small">Editar</a>
-								<a href="/admin/users/delete/<?=$u['User']['id']?>" class="btn small" onclick="return(confirm('¿Está seguro?'))">Eliminar</a>
+								<?php if($administrador):?>
+									<a href="/admin/users/edit/<?=$u['User']['id']?>" class="btn small">Editar</a>
+									<a href="/admin/users/delete/<?=$u['User']['id']?>" class="btn small" onclick="return(confirm('¿Está seguro?'))">Eliminar</a>
+								<?php endif;?>
 							</td>
 						</tr>
 					<?php endforeach;?>
