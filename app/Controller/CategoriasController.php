@@ -33,6 +33,9 @@ class CategoriasController extends AppController {
 		}
 		$this->Categoria->recursive=-1;
 		$this->set("data",$this->Categoria->find('all'));
+		$this->set("lstCatego",$this->Categoria->find('list',[
+			'conditions'=>'Categoria.padre is null'
+			]));
 	}
 	/***********************************************************/
 	public function admin_edit($id=null){

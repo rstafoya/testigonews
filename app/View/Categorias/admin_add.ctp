@@ -7,6 +7,7 @@
 				<?=$this->Form->input("nombre")?>
 				<?=$this->Form->input("nombre_amigable")?>
 				<?=$this->Form->input("orden")?>
+				<?=$this->Form->input("padre",['options'=>$lstCatego,'empty'=>true])?>
 				<?=$this->Form->end(["class"=>"btn","label"=>"Agregar"])?>
 			</div>
 		</div>
@@ -34,3 +35,6 @@
 		</div>
 	</div>
 </div>
+<script>
+	$("label").addClass('active');
+</script>
