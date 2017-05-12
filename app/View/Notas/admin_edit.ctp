@@ -19,6 +19,7 @@
 					<?=$this->Form->input("fecha_final",['type'=>'text',"default"=>$notas['Nota']['fecha_final'],'div'=>'col s6'])?>
 				</div>
 				<?=$this->Form->input("resumen",['default'=>$notas['Nota']['resumen']])?>
+				<iframe src="/img/media/dir.php" frameborder="0" width="100%" height="1000"></iframe>
 				<?=$this->Form->input("contenido",["class"=>"wysiwygeditor","default"=>$notas['Nota']['contenido']])?>
 				<?=$this->Form->end(['label'=>'Guardar','class'=>'btn'])?>
 			</div>
