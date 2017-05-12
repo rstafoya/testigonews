@@ -1,11 +1,13 @@
 $(document).ready(function(){
 	$(".slider").slider();
 
+	/////////////////////////////////////////////////////////////
+
 	$(".altura").each(function(index, el) {
 		$(this).css('background-image','url('+$(this).data('fondo')+')')
 	});
 
-
+	/////////////////////////////////////////////////////////////
 
 	$(".img-altofijo").each(function(index, el) {
 		var este = $(this)
@@ -20,7 +22,16 @@ $(document).ready(function(){
 		este.remove()
 	});
 
+	/////////////////////////////////////////////////////////////
 
+	$(".ajaxload").each(function(){
+		var este = $(this);
+		$.get(este.data('ajax'), function(data) {
+			este.html(data)
+		});
+	})
+
+	/////////////////////////////////////////////////////////////
 
 	while($(".repite").length){
 		$(".repite").each(function(){
@@ -32,6 +43,8 @@ $(document).ready(function(){
 			$(this).removeClass('repite')
 		});
 	}
+
+	/////////////////////////////////////////////////////////////
 
 	$(".button-collapse").sideNav();
 })

@@ -19,8 +19,7 @@
 	</div>
 
 	<div class="row">
-		<div class="col s12">
-			<?=file_get_contents('http://localhost:8383/anuncios/random/1')?>
+		<div class="col s12 ajaxload" data-ajax="http://localhost:8383/anuncios/random/1">
 		</div>
 	</div>
 
