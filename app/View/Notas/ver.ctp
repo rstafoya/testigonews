@@ -5,7 +5,7 @@
 				<h4><?=$nota['Nota']['titulo']?></h4>
 				<p>por <strong><?=$nota['User']['nombre'].'</strong> el '.$nota['Nota']['fecha_de_publicacion']?></p>
 				<img src="<?=$nota['Nota']['imagen_de_portada']?>" height="400" class="img-altofijo">
-				<div>
+				<div id="contenidodelanota">
 					<?=nl2br($nota['Nota']['contenido'])?>
 				</div>
 				<div class="row">
@@ -20,3 +20,6 @@
 	</div>
 	<?=$this->Element("barralateral")?>
 </div>
+<script>
+	$("#contenidodelanota p>img").addClass('responsive-img');
+</script>
