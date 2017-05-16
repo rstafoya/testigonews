@@ -15,7 +15,7 @@
 			</div>
 			<?php if(($j++)%3==0): ?>
 				<div class="row">
-					<div class="col s12 ajaxload" data-ajax="http://localhost:8383/anuncios/random/3">						
+					<div class="col s12 ajaxload" data-ajax="/anuncios/random/3">						
 					</div>
 				</div>
 			<?php endif;?>

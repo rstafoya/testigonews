@@ -9,7 +9,7 @@
 					<?=nl2br($nota['Nota']['contenido'])?>
 				</div>
 				<div class="row">
-					<div class="col s12 l6 ajaxload" data-ajax="http://localhost:8383/anuncios/random/2">
+					<div class="col s12 l6 ajaxload" data-ajax="/anuncios/random/2">
 					</div>
 				</div>
 				<div class="comentarios">
