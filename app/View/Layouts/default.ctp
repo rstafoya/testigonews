@@ -22,7 +22,7 @@
 				<div class="col s12 center">
 					<a href="/"><img class="responsive-img" src="/img/logotestigo.png"></a>
 				</div>
-				<div class="col s12 ajaxload" data-ajax="http://localhost:8383/categorias/ajax_menucategorias">
+				<div class="col s12 ajaxload" data-ajax="/categorias/ajax_menucategorias">
 				</div>
 			</div>
 		</header>
