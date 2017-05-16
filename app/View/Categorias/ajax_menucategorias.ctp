@@ -30,7 +30,11 @@ function existe($i,$a){
 
 <nav class="colortestigo">
 	<div class="nav-wrapper">
-		<ul class="left">
+		<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+
+
+
+		<ul class="left hide-on-med-and-down">
 			<li><a href="/">Inicio</a></li>
 		<?php foreach($menu as $m):?>
 			<?php if(existe($m['Categoria']['id'],$sub)>0):?>
@@ -46,5 +50,18 @@ function existe($i,$a){
 			<?php endif;?>
 		<?php endforeach; ?>
 		</ul>
+
+
+
+		<ul class="side-nav" id="mobile-demo">
+			<li><a href="/">Inicio</a></li>
+		<?php foreach($categorias as $m):?>
+	        <li><a href="/categorias/ver/<?=$m['Categoria']['id']?>">
+			<?php if($m['Categoria']['padre']):?>
+	        <i class="material-icons">keyboard_arrow_right</i>
+			<?php  endif;?>
+	        <?=$m['Categoria']['nombre']?></a></li>
+		<?php endforeach;?>
+      	</ul>
 	</div>
 </nav>
