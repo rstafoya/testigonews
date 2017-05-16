@@ -28,6 +28,8 @@ $(document).ready(function(){
 		var este = $(this);
 		$.get(este.data('ajax'), function(data) {
 			este.html(data)
+			$(".button-collapse").sideNav();
+			$(".dropdown-button").dropdown();
 		});
 	})
 
@@ -46,5 +48,5 @@ $(document).ready(function(){
 
 	/////////////////////////////////////////////////////////////
 
-	$(".button-collapse").sideNav();
+
 })

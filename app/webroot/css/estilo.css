@@ -12,6 +12,9 @@ p,div,td,th,li{
 	font-size: 18px;
 }
 
+nav .button-collapse i {
+    line-height: 40px !important;
+}
 main a{
 	color: #A01027;
 }
