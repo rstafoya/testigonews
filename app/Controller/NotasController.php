@@ -9,6 +9,8 @@ class NotasController extends AppController {
 /***********************************************************/
 	public function admin_index() {
 		$this->Nota->recursive = 0;
+		$this->Nota->order='Nota.modified desc';
+
 		$this->set('notas', $this->Paginator->paginate());
 	}
 /***********************************************************/

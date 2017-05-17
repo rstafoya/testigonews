@@ -1,3 +1,13 @@
+<style>
+	.botonfixed{
+		position: fixed;
+		left: 20px;
+		top: 200px;
+	}
+	#contenedor{
+		margin-top: 5px;
+	}
+</style>
 <div class="row">
 	<div class="col s12">
 		<div class="card">
@@ -19,19 +29,21 @@
 					<?=$this->Form->input("fecha_final",['type'=>'text',"default"=>$notas['Nota']['fecha_final'],'div'=>'col s6'])?>
 				</div>
 				<?=$this->Form->input("resumen",['default'=>$notas['Nota']['resumen']])?>
-				<span class="btn" id="imagenes">Imágenes</span>
+
+				<span class="btn" id="imagenes">Imágenes <i class="material-icons right">archive</i></span>
 				<iframe id="contenedor" src="/img/media/dir.php" frameborder="0" width="100%" height="800"></iframe>
+
 				<?=$this->Form->input("contenido",["class"=>"wysiwygeditor","default"=>$notas['Nota']['contenido']])?>
-				<?=$this->Form->end(['label'=>'Guardar','class'=>'btn'])?>
+				<?=$this->Form->end(['label'=>'Guardar','class'=>'btn btn-large botonfixed'])?>
 			</div>
 		</div>
 	</div>
 </div>
 <script>
-	$("#contenedor").hide();
 	$("label").addClass('active');
 	$("#NotaFechaDePublicacion").attr('type', 'date');
 	$("#NotaFechaFinal").attr('type', 'date');
+	
 	$("#NotaTitulo").keyup(function(event) {
 		var ruta = $("#NotaTitulo").val().toLowerCase()
 		ruta = ruta.replace(/[^a-zA-Z ]/g, "");
@@ -39,8 +51,7 @@
 		$("#NotaRuta").val(ruta)
 		$("#NotaRuta").prev().addClass('active');
 	});
-	$("#imagenes").click(function() {
-		$("#contenedor").slideToggle()
-	});
 
+	$("#contenedor").hide();
+	$("#imagenes").click(function(){$("#contenedor").slideToggle()});
 </script>

@@ -5,6 +5,8 @@ $(document).ready(function() {
 	$("textarea").addClass('materialize-textarea')
 	$(".wysiwygeditor").trumbowyg({
 		autogrow:true,
+		removeformatPasted: true,
+		resetCss: true,
 		lang:'es'
 	});
 	$("#flashMessage").addClass("animated tada").wrap('<div class="sombra"></div>')

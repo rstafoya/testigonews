@@ -1,3 +1,13 @@
+<style>
+	.botonfixed{
+		position: fixed;
+		left: 20px;
+		top: 200px;
+	}
+	#contenedor{
+		margin-top: 5px;
+	}
+</style>
 <div class="row">
 	<div class="col s12">
 		<div class="card">
@@ -17,8 +27,12 @@
 					<?=$this->Form->input("fecha_final",['type'=>'text','default'=>'3000-01-01','div'=>'col s6'])?>
 				</div>
 				<?=$this->Form->input("resumen")?>
+
+				<span class="btn" id="imagenes">Imágenes <i class="material-icons right">archive</i></span>
+				<iframe id="contenedor" src="/img/media/dir.php" frameborder="0" width="100%" height="500"></iframe>
+
 				<?=$this->Form->input("contenido",["class"=>"wysiwygeditor"])?>
-				<?=$this->Form->end(['label'=>'Guardar','class'=>'btn'])?>
+				<?=$this->Form->end(['label'=>'Guardar','class'=>'btn btn-large botonfixed'])?>
 			</div>
 		</div>
 	</div>
@@ -34,4 +48,8 @@
 		$("#NotaRuta").val(ruta)
 		$("#NotaRuta").prev().addClass('active');
 	});
+
+	$("#contenedor").hide();
+	$("#imagenes").click(function(){$("#contenedor").slideToggle()});
+
 </script>

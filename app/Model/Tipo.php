@@ -3,6 +3,7 @@ App::uses('AppModel', 'Model');
 class Tipo extends AppModel {
 
 	public $displayField = 'nombre';
+	public $order = 'Tipo.nombre';
 
 	public $validate = array(
 		'nombre' => array(
