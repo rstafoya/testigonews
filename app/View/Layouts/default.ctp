@@ -19,6 +19,18 @@
 	<div class="container">
 		<header>
 			<div class="row cabacera">
+				<nav class="barracontacto hide-on-small-only">
+					<div class="nav-wrapper">
+						<ul class="left">
+							<li><a href="#" id="lafecha"></a></li>
+							<li><a href="mailto:contacto@testigonewsbajio.mx">Contacto</a></li>
+						</ul>
+						<ul class="right">
+							<li><a href="#"><img src="/img/icono_facebook.png"></a></li>
+							<li><a href="#"><img src="/img/icono_twitter.png" ></a></li>
+						</ul>
+					</div>
+				</nav>
 				<div class="col s12 center">
 					<a href="/"><img class="responsive-img" src="/img/logotestigo.png"></a>
 				</div>
