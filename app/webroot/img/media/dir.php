@@ -36,6 +36,17 @@ if (isset($_FILES["archivo_a_subir"])) {
 		padding: 0px;
 		background: #cff;
 	}
+	.cancelar{
+		position: fixed;
+		top:10px;
+		left: 10px;
+		background: white;
+		color:black;
+		cursor: pointer;
+		padding: 10px 20px;
+		box-shadow: 0px 3px 3px rgba(0,0,0,.5);
+		border-radius: 5px;
+	}
 	.btn{
 		background:#d84315;
 		color:white;
@@ -68,25 +79,29 @@ if (isset($_FILES["archivo_a_subir"])) {
 		width: 100%;
 		height: 100%;
 	}
-	.subida{
+	.ventana{
 		display: block;
 		background: white;
 		position: block;
-		width: 50%;
+		width: 80%;
 		min-width: 300px;
 		padding: 20px;
 		border-radius: 10px;
 		box-shadow: 0px 3px 3px rgba(0,0,0,.5);
-		margin:100px auto 0px auto;
-		font-size: 26px;
+		margin:50px auto 0px auto;
+	}
+	.ventana input{
+		font-size: 18px;
+		margin: 20px;
+		padding: 5px auto;
 	}
 </style>
 <body>
 	<div class="botones">
 		<a href="#" class="btn" id="mas">+</a>
 		<a href="#" class="btn" id="menos">-</a>
-		<a href="#" class="btn">sig</a>
-		<a href="#" class="btn">ant</a>
+		<!--a href="#" class="btn">sig</a-->
+		<!--a href="#" class="btn">ant</a-->
 		<a href="#" class="btn" id="subir">subir</a>
 	</div>
 	<?php
@@ -99,15 +114,25 @@ if (isset($_FILES["archivo_a_subir"])) {
 		}
 	}
 	?>
-	<div class="sombra">
-		<div class="subida">
+	<div class="sombra subir">
+		<div class="ventana">
 			<form action="dir.php" method="post" enctype="multipart/form-data">
 				<input type="file" name="archivo_a_subir" accept=".jpg,.jpeg,.gif,.png">
 				<br>
-				<input name="submit" type="submit" value="Subir imagen">
+				<input type="submit" name="submit" value="Subir imagen" style="width:200px;">
 			</form>
 		</div>
+		<div class="cancelar">Cancelar</div>
 	</div>
+	<div class="sombra seleccionar">
+		<div class="ventana">
+			<input type="range" min="20" max="800" value="200" id="altura" style="width: 600px; margin:10px;"><br>
+			<input type="text" id="codigo" style="width: 90%; text-align: center; margin:10px;"><br>
+			<img class="imagenseleccionada" src="">
+		</div>
+		<div class="cancelar">Cancelar</div>
+	</div>
+
 	<script>
 		$("#mas").click(function(event) {
 			$(".miniatura").animate({'height':$(".miniatura").height()*1.4},'fast')
@@ -115,11 +140,20 @@ if (isset($_FILES["archivo_a_subir"])) {
 		$("#menos").click(function(event) {
 			$(".miniatura").animate({'height':$(".miniatura").height()*.7},'fast')
 		});
+		$(".cancelar").click(function(event) {
+			$(".sombra").fadeOut('fast');
+		});
 		$(".miniatura").click(function(event) {
-			alert($(this).attr('src'))
+			$(".imagenseleccionada").attr('src', $(this).attr('src'));
+			$(".sombra.seleccionar").fadeIn();
+			$("#codigo").val("<img src='"+$(".imagenseleccionada").attr('src')+"'>")
 		});
 		$("#subir").click(function() {
-			$(".sombra").fadeIn();
+			$(".sombra.subir").fadeIn();
+		});
+		$("#altura").on('change input',function(event) {
+			$(".imagenseleccionada").height($("#altura").val())
+			$("#codigo").val("<img src='"+$(".imagenseleccionada").attr('src')+"' style='height:"+$("#altura").val()+"px' />")
 		});
 	</script>
 </body>
