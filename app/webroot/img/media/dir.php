@@ -3,7 +3,7 @@ if (isset($_FILES["archivo_a_subir"])) {
 	$target_dir = "./";
 	$ext = explode('.', $_FILES['archivo_a_subir']['name']);
 	$ext = strtolower(array_pop($ext));
-	$target_file = $target_dir . date("Ynd-His").'.'.$ext;
+	$target_file = $target_dir . date("Ymd-His").'.'.$ext;
 	if(isset($_POST["submit"])) {
 		$check = getimagesize($_FILES["archivo_a_subir"]["tmp_name"]);
 		if($check !== false) {
@@ -91,6 +91,7 @@ if (isset($_FILES["archivo_a_subir"])) {
 	</div>
 	<?php
 	$archivos = array_slice(scandir('.'), 2);
+	rsort($archivos);
 
 	foreach ($archivos as $a) {
 		if ($a!='dir.php') {
