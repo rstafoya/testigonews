@@ -30,6 +30,9 @@
 	</div>
 </div>
 
+<div class="row">
+	<div class="col s12 ajaxload" data-ajax="/anuncios/random/5"></div>
+</div>
 <!--                Listado de categorías                 -->
 
 <div class="row">
