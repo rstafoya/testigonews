@@ -8,6 +8,7 @@
 				<?=$this->Form->input("nombre",['default'=>$categoria['Categoria']['nombre']])?>
 				<?=$this->Form->input("nombre_amigable",['default'=>$categoria['Categoria']['nombre_amigable']])?>
 				<?=$this->Form->input("padre",['empty'=>true,'options'=>$lstCatego,'default'=>$categoria['Categoria']['padre']])?>
+				<?=$this->Form->input("visible",['default'=>$categoria['Categoria']['visible']])?>
 				<?=$this->Form->end(["class"=>"btn","label"=>"Guardar"])?>
 			</div>
 		</div>
@@ -20,12 +21,14 @@
 						<th>Orden</th>
 						<th>Nombre</th>
 						<th>Padre</th>
+						<th>Visibilidad</th>
 					</tr>
 					<?php foreach($data as $d):?>
 						<tr>
 							<td><?=$d['Categoria']['orden']?></td>
 							<td><?=$d['Categoria']['nombre']?></td>
 							<td><?=$d['Categoria']['padre']?></td>
+							<td><?=$d['Categoria']['visible']?></td>
 						</tr>
 					<?php endforeach;?>
 				</table>

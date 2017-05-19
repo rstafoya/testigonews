@@ -64,7 +64,9 @@ class CategoriasController extends AppController {
 	public function ajax_menucategorias() {
 		$this->layout='ajax';
 		$this->Categoria->recursive = 0;
-		$this->set('categorias', $this->Categoria->find("all"));
+		$this->set('categorias', $this->Categoria->find("all",[
+			'conditions'=>['visible'=>1]
+			]));
 	}
 	/***********************************************************/
 	public function ver($id=null){

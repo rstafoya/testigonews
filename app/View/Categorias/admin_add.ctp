@@ -6,8 +6,8 @@
 				<?=$this->Form->create()?>
 				<?=$this->Form->input("nombre")?>
 				<?=$this->Form->input("nombre_amigable")?>
-				<?=$this->Form->input("orden")?>
 				<?=$this->Form->input("padre",['options'=>$lstCatego,'empty'=>true])?>
+				<?=$this->Form->input("visible")?>
 				<?=$this->Form->end(["class"=>"btn","label"=>"Agregar"])?>
 			</div>
 		</div>
@@ -21,6 +21,7 @@
 						<th>Orden</th>
 						<th>Nombre</th>
 						<th>Padre</th>
+						<th>Visibilidad</th>
 					</tr>
 					<?php foreach($data as $d):?>
 						<tr>
@@ -28,6 +29,7 @@
 							<td><?=$d['Categoria']['orden']?></td>
 							<td><?=$d['Categoria']['nombre']?></td>
 							<td><?=$d['Categoria']['padre']?></td>
+							<td><?=$d['Categoria']['visible']?></td>
 						</tr>
 					<?php endforeach;?>
 				</table>
