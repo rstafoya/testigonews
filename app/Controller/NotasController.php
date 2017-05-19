@@ -17,6 +17,7 @@ class NotasController extends AppController {
 	public function admin_add() {
 		if ($this->request->is('post')) {
 			$this->Nota->create();
+			$this->request->data["Nota"]["user_id"]=$this->Auth->user("id");
 			if($this->Nota->save($this->request->data)){
 				$this->Flash->set("Se ha guardado la nota");
 				$this->redirect("/admin/");
