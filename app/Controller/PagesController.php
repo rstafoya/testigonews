@@ -6,10 +6,15 @@ App::uses('AppController', 'Controller');
 
 class PagesController extends AppController {
 
-/***********************************************************/
+	/***********************************************************/
 	public $uses = array();
 
-/***********************************************************/
+	/***********************************************************/
+	public function beforeFilter(){
+		parent::beforeFilter();
+		$this->Auth->allow('display');
+	}
+	/**************************************************************************/
 	public function display() {
 		$path = func_get_args();
 
@@ -21,6 +26,10 @@ class PagesController extends AppController {
 			throw new ForbiddenException();
 		}
 		$page = $subpage = $title_for_layout = null;
+
+		if ($path[0]=='home') {
+			$this->layout='ajax';
+		}
 
 		if (!empty($path[0])) {
 			$page = $path[0];
