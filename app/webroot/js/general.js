@@ -30,6 +30,7 @@ $(document).ready(function(){
 			este.html(data)
 			$(".button-collapse").sideNav();
 			$(".dropdown-button").dropdown();
+			$(".modal").modal();
 		});
 	})
 

@@ -61,5 +61,13 @@
 		</footer>
 	</div>
 	<?php echo $this->Session->flash(); ?>
+	<div id="modal1" class="modal">
+		<div class="modal-content">
+			<form action="/notas/buscar" method="post">
+				<div class="item-field"><input id="cadenabusqueda" type="text"></div>
+				<input type="submit" value="Buscar" class="btn colortestigo">
+			</form>
+		</div>
+	</div>
 </body>
 </html>
