@@ -54,7 +54,7 @@
 					</div>
 					<?php foreach($cat['Nota'] as $nota):?>
 						<div class="col m5 notitas">
-							<div class="row">
+							<div class="row" style="margin-bottom: 0px;">
 								<a href="/notas/ver/<?=$nota['id']?>">
 									<div class="col s4">
 										<img src="<?=$nota['imagen_de_portada']?>" alt="" class="responsive-img">
