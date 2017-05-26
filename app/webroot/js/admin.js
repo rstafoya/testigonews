@@ -9,7 +9,7 @@ $(document).ready(function() {
 		resetCss: true,
 		lang:'es'
 	});
-	$("#flashMessage").addClass("animated tada").wrap('<div class="sombra"></div>')
+	$("#flashMessage").addClass("animated fadeInDown").wrap('<div class="sombra"></div>')
 	$(".sombra").click(function(event) {
 		$(this).remove()
 	});
