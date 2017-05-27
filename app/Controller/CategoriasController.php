@@ -71,6 +71,15 @@ class CategoriasController extends AppController {
 			]));
 	}
 	/***********************************************************/
+	public function admin_delete($id = null){
+		if ($this->Categoria->delete($id)) {
+			$this->Flash->set("Se ha borrado la categoria");
+		}else{
+			$this->Flash->set("No se ha podido borrar la categoría");
+		}
+		$this->redirect('/admin/categorias');
+	}
+	/***********************************************************/
 	public function ver($id=null){
 		if ($data = $this->Categoria->findById($id)) {
 			$this->set('data',$data);
