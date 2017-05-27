@@ -16,7 +16,8 @@
 // Setup a 'default' cache configuration for use in the application.
 Cache::config('default', array('engine' => 'File'));
 
-require APP.'\Vendor\knit\init.php';
+
+require APP.'/Vendor/knit/init.php';
 
 /**
  * The settings below can be used to set additional paths to models, views and controllers.
