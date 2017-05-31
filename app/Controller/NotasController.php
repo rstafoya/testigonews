@@ -4,7 +4,7 @@ class NotasController extends AppController {
 	/***********************************************************/
 	public function beforeFilter() {
 		parent::beforeFilter();
-		$this->Auth->allow('ver');
+		$this->Auth->allow('ver','buscar');
 	}
 	/***********************************************************/
 	public function admin_index() {
@@ -56,6 +56,26 @@ class NotasController extends AppController {
 			$this->Flash->set("No se ha podido borrar la nota");
 		}
 		$this->redirect('/admin/notas');
+	}
+	/***********************************************************/
+	public function buscar($cad=''){
+		if ($cad=='') {
+			$this->redirect("/");
+		}else{
+			$lista = explode('-', $cad);
+			$cond = [];
+			foreach ($lista as $l) {
+				$cond[]=["Nota.titulo like '%$l%'"];
+			}
+			$titulos = $this->Nota->find("all",[
+				'recursive'=>-1,
+				'fields'=>['titulo','imagen_de_portada','resumen','id','created'],
+				'conditions'=>$cond,
+				'limit'=>12*3,
+				'order'=>'created desc'
+				]);
+			$this->set("titulos",$titulos);
+		}
 	}
 	/***********************************************************/
 	public function ver($id=null) {

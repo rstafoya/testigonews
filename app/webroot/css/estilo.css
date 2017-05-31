@@ -18,7 +18,10 @@ nav .button-collapse i {
 main a{
 	color: #A01027;
 }
-
+nav.colortestigo, nav.colortestigo i{
+	height: 44px !important;
+	line-height: 44px !important;
+}
 .indicator-item.active{
 	background: #A01027 !important;
 }
