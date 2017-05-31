@@ -1,43 +1,26 @@
-<?php
-/**
- * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
- * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
- *
- * Licensed under The MIT License
- * For full copyright and license information, please see the LICENSE.txt
- * Redistributions of files must retain the above copyright notice.
- *
- * @copyright     Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
- * @link          http://cakephp.org CakePHP(tm) Project
- * @package       Cake.View.Errors
- * @since         CakePHP(tm) v 0.10.0.1076
- * @license       http://www.opensource.org/licenses/mit-license.php MIT License
- */
-
-?>
-<h2><?php echo __d('cake_dev', 'Missing Method in %s', h($controller)); ?></h2> <p class="error">
-	<strong><?php echo __d('cake_dev', 'Error'); ?>: </strong>
-	<?php echo __d('cake_dev', 'The action %1$s is not defined in controller %2$s', '<em>' . h($action) . '</em>', '<em>' . h($controller) . '</em>'); ?>
-</p>
-<p class="error">
-	<strong><?php echo __d('cake_dev', 'Error'); ?>: </strong>
-	<?php echo __d('cake_dev', 'Create %1$s%2$s in file: %3$s.', '<em>' . h($controller) . '::</em>', '<em>' . h($action) . '()</em>', APP_DIR . DS . 'Controller' . DS . h($controller) . '.php'); ?>
-</p>
-<pre>
-&lt;?php
-class <?php echo h($controller); ?> extends AppController {
-
-<strong>
-	public function <?php echo h($action); ?>() {
-
+<style>
+	#sad, #e404{
+		position: relative;
+		top:0px;
 	}
-</strong>
-}
-</pre>
-<p class="notice">
-	<strong><?php echo __d('cake_dev', 'Notice'); ?>: </strong>
-	<?php echo __d('cake_dev', 'If you want to customize this error message, create %s', APP_DIR . DS . 'View' . DS . 'Errors' . DS . 'missing_action.ctp'); ?>
+	#e404{
+		opacity: 0;
+	}
+</style>
+<h3 class="center">Lo sentimos...</h3>
+<p class="center">
+	No hemos podido encontrar la página que buscas, posiblemente esté mal escrita la dirección.
 </p>
-<?php
-echo $this->element('exception_stack_trace');
-?>
+<p class="center">
+	Te invitamos a que veas el resto del contenido que tenemos para ti.
+</p>
+<p class="center">
+	<img src="/img/sad.png" alt="" id=sad><br>
+	<img src="/img/404.png" alt="" id=e404>
+</p>
+<script>
+	$("#e404").delay(2000).animate({
+		'top':-320,
+		'opacity':1
+	},1000)
+</script>
