@@ -1,6 +1,23 @@
+<style>
+	.peque{
+		overflow:hidden;
+	}
+	.peque h5{
+		font-size: 105%;
+		margin-top: 0px;
+	}
+	.peque p{
+		font-size: 80%;
+		text-align: justify;
+	}
+</style>
 <!--    Galería de las últimas cuatro notas    -->
 <div class="row">
-	<div class="col m7 s12">
+	<div class="col m2 s12 peque">
+		<h5><?=$editorial['Nota']['titulo']?></h5>
+		<p><?=nl2br($editorial['Nota']['resumen'])?></p>
+	</div>
+	<div class="col m6 s12" id="elmaximo">
 		<div class="slider">
 			<ul class="slides">
 				<?php foreach($ultimos as $u):?>
@@ -17,7 +34,7 @@
 		</div>
 	</div>
 	<!-- Las mismas noticias, pero en cuadritos -->
-	<div class="col m5 hide-on-small-only">
+	<div class="col m4 hide-on-small-only">
 		<div class="row">
 			<?php foreach($ultimos as $u):?>
 				<div class="col s6">
@@ -73,3 +90,6 @@
 
 	<?=$this->Element('barralateral')?>
 </div>
+<script>
+	$(".peque").height($("#elmaximo").height())
+</script>

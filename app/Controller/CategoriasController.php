@@ -11,6 +11,10 @@ class CategoriasController extends AppController {
 		$this->Categoria->recursive = 1;
 		$this->Categoria->hasMany['Nota']['limit']=5;
 
+		$this->set('editorial', $this->Categoria->Nota->find('first',[
+			'order'=>'Nota.created',
+			'conditions'=>['Nota.categoria_id'=>'4'],
+			]));
 		$this->set('categorias', $this->Categoria->find('all'));
 		$this->set('ultimos',$this->Categoria->Nota->find('all',[
 			'limit'=>4,
