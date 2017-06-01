@@ -1,24 +1,25 @@
 <div class="card">
 	<div class="card-content">
 	<div class="card-title">Notas</div>
-		<table id="listado">
+		<table id="listado" class="highlight">
 			<thead>
 				<tr>
 					<th>Título</th>
 					<th>Autor</th>
 					<th>Categoría</th>
-					<th>Acciones</th>
+					<th></th>
 				</tr>
 			</thead>
 			<tbody>
 			<?php foreach ($notas as $nota): ?>
 				<tr>
-					<td><a href="/admin/notas/edit/<?=$nota['Nota']['id']?>"><?=substr($nota['Nota']['titulo'],0,70)?></a></td>
+					<td><?=substr($nota['Nota']['titulo'],0,100)?></td>
 					<td><?=$nota['User']['nombre']?></td>
 					<td><?=$nota['Categoria']['nombre']?></td>
 					<td>
-						<a class="btn small" href="/admin/notas/edit/<?=$nota['Nota']['id']?>">Modificar</a>
-						<a class="btn small" href="/admin/notas/delete/<?=$nota['Nota']['id']?>" onclick="return(confirm('¿Está seguro?'))">Eliminar</a>
+						<a class="btn small" href="/notas/ver/<?=$nota['Nota']['id']?>" target="_blank"><i class="material-icons">visibility</i></a>
+						<a class="btn small" href="/admin/notas/edit/<?=$nota['Nota']['id']?>"><i class="material-icons">edit</i></a>
+						<a class="btn small" href="/admin/notas/delete/<?=$nota['Nota']['id']?>" onclick="return(confirm('¿Está seguro?'))"><i class="material-icons">delete</i></a>
 					</td>
 				</tr>
 			<?php endforeach ?>

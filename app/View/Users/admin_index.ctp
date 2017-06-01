@@ -3,12 +3,12 @@
 		<div class="card">
 			<div class="card-content">
 				<div class="card-title">Lista de usuarios</div>
-				<table>
+				<table class="highlight">>
 					<tr>
 						<th>Nombre</th>
 						<th>email</th>
 						<th>Admin</th>
-						<th>Acciones</th>
+						<th></th>
 					</tr>
 					<?php foreach($data as $u):?>
 						<tr>
@@ -17,8 +17,8 @@
 							<td><?=$u['User']['administrador']?></td>
 							<td>
 								<?php if($administrador):?>
-									<a href="/admin/users/edit/<?=$u['User']['id']?>" class="btn small">Editar</a>
-									<a href="/admin/users/delete/<?=$u['User']['id']?>" class="btn small" onclick="return(confirm('¿Está seguro?'))">Eliminar</a>
+									<a href="/admin/users/edit/<?=$u['User']['id']?>" class="btn small"><i class="material-icons">edit</i></a>
+									<a href="/admin/users/delete/<?=$u['User']['id']?>" class="btn small" onclick="return(confirm('¿Está seguro?'))"><i class="material-icons">delete</i></a>
 								<?php endif;?>
 							</td>
 						</tr>

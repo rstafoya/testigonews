@@ -3,7 +3,7 @@
 		<div class="card">
 			<div class="card-content">
 				<div class="card-title">Anuncios</div>
-				<table>
+				<table class="highlight">>
 					<tr>
 						<th></th>
 						<th></th>
@@ -11,7 +11,7 @@
 						<th>Inicio</th>
 						<th>Final</th>
 						<th>Tipo</th>
-						<th>Acciones</th>
+						<th></th>
 					</tr>
 					<?php foreach($data as $dat):?>
 						<?php
@@ -37,8 +37,8 @@
 							<td><?=$dat['Anuncio']['final']?></td>
 							<td><?=$dat['Tipo']['nombre']?></td>
 							<td>
-								<a href="/admin/anuncios/edit/<?=$dat['Anuncio']['id']?>" class="btn small">Editar</a>
-								<a href="/admin/anuncios/delete/<?=$dat['Anuncio']['id']?>" class="btn small" onclick="return(confirm('¿Está seguro?'))">Borrar</a>
+								<a href="/admin/anuncios/edit/<?=$dat['Anuncio']['id']?>" class="btn small"><i class="material-icons">edit</i></a>
+								<a href="/admin/anuncios/delete/<?=$dat['Anuncio']['id']?>" class="btn small" onclick="return(confirm('¿Está seguro?'))"><i class="material-icons">delete</i></a>
 							</td>
 						</tr>
 					<?php endforeach;?>
