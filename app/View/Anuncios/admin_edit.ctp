@@ -7,11 +7,12 @@
 				<?=$this->Form->input('id',['default'=>$data['Anuncio']['id']])?>
 				<?=$this->Form->input('nombre',['default'=>$data['Anuncio']['nombre']])?>
 				<?=$this->Form->input('imagen',['default'=>$data['Anuncio']['imagen']])?>
+				<?=$this->Form->input('codigo',['default'=>$data['Anuncio']['codigo']])?>
 				<?=$this->Form->input('url',['default'=>$data['Anuncio']['url']])?>
 				<?=$this->Form->input('inicio',['type'=>'text','default'=>date('Y-m-d')])?>
 				<?=$this->Form->input('final',['type'=>'text','default'=>date('Y-m-d')])?>
 				<?=$this->Form->input('tipo_id',['default'=>$data['Anuncio']['tipo_id']])?>
-				<?=$this->Form->end(['label'=>'Agregar','class'=>'btn'])?>
+				<?=$this->Form->end(['label'=>'Guardar cambios','class'=>'btn'])?>
 			</div>
 		</div>
 	</div>

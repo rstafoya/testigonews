@@ -20,6 +20,7 @@
 				<iframe id="contenedor" src="/img/media/dir.php" frameborder="0" width="100%" height="500"></iframe>
 
 				<?=$this->Form->input('imagen')?>
+				<?=$this->Form->input('codigo')?>
 				<?=$this->Form->input('url')?>
 				<?=$this->Form->input('inicio',['type'=>'text','default'=>date('Y-m-d')])?>
 				<?=$this->Form->input('final',['type'=>'text','default'=>date('Y-m-d')])?>
