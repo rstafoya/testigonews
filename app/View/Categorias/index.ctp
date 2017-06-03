@@ -12,7 +12,7 @@
 	}
 </style>
 <!--    Galería de las últimas cuatro notas    -->
-<div class="row">
+<div class="row hide-on-small-only">
 	<div class="col m2 s12 peque">
 		<h5><?=$editorial['Nota']['titulo']?></h5>
 		<p><?=nl2br($editorial['Nota']['resumen'])?></p>
@@ -34,7 +34,7 @@
 		</div>
 	</div>
 	<!-- Las mismas noticias, pero en cuadritos -->
-	<div class="col m4 hide-on-small-only">
+	<div class="col m4">
 		<div class="row">
 			<?php foreach($ultimos as $u):?>
 				<div class="col s6">
@@ -69,8 +69,13 @@
 							<h5><?=$primero['titulo']?></h5>
 						</a>
 					</div>
+					<?php $j=0?>
 					<?php foreach($cat['Nota'] as $nota):?>
-						<div class="col m5 notitas">
+						<?php if(($j++)==0):?>
+							<div class="col m5 notitas hide-on-med-and-up">
+						<?php else:?>
+							<div class="col m5 notitas">
+						<?php endif;?>
 							<div class="row" style="margin-bottom: 0px;">
 								<a href="/notas/ver/<?=$nota['id']?>">
 									<div class="col s4">

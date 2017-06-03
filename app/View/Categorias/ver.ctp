@@ -1,3 +1,8 @@
+<style>
+	.resumen{
+		font-size: 80%;
+	}
+</style>
 <?php $j = 1;?>
 <div class="row">
 	<div class="col m9 s12">
@@ -10,7 +15,7 @@
 					<div class="col s5">
 						<img height="150" src="<?=$nota['imagen_de_portada']?>" alt="<?=$nota['titulo']?>" class="img-altofijo">
 					</div>
-					<div class="s7">
+					<div class="s7 resumen">
 						<?=nl2br($nota['resumen'])?>
 					</div>
 				</a>
