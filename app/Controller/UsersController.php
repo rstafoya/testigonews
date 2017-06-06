@@ -19,6 +19,11 @@ class UsersController extends AppController {
 	}
 	/**************************************************************************/
 	public function admin_registrar(){
+		if ($this->Auth->user("admin")==0) {
+			$this->Flash->set("Usted no tiene privilegios de administrador");
+			$this->redirect("/admin/users");
+		}
+
 		if ($this->request->is('post')) {
 			$this->User->create();
 			if ($this->User->save($this->request->data)) {
@@ -30,6 +35,11 @@ class UsersController extends AppController {
 	}
 	/**************************************************************************/
 	public function admin_edit($id=null){
+		if ($this->Auth->user("admin")==0) {
+			$this->Flash->set("Usted no tiene privilegios de administrador");
+			$this->redirect("/admin/users");
+		}
+
 		if (!$data = $this->User->findById($id)) {
 			$this->Flash->set("No se encuentra el usuario");
 			$this->redirect('/admin/users');
@@ -57,6 +67,11 @@ class UsersController extends AppController {
 	}
 	/***********************************************************/
 	public function admin_delete($id = null){
+		if ($this->Auth->user("admin")==0) {
+			$this->Flash->set("Usted no tiene privilegios de administrador");
+			$this->redirect("/admin/users");
+		}
+
 		if ($data = $this->User->findById($id)) {
 			if ($data['User']['administrador']) {
 				$this->Flash->set("No se pueden eliminar los usuarios administradores.");
@@ -72,5 +87,4 @@ class UsersController extends AppController {
 		}
 		$this->redirect('/admin/users');
 	}
-
 }

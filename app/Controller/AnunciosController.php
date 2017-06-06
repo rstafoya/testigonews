@@ -8,10 +8,20 @@ class AnunciosController extends AppController {
 	}
 	/***********************************************************/
 	public function admin_index(){
+		if ($this->Auth->user("admin")==0) {
+			$this->Flash->set("Usted no tiene privilegios de administrador");
+			$this->redirect("/admin");
+		}
+
 		$this->set("data",$this->Anuncio->find('all'));
 	}
 	/***********************************************************/
 	public function admin_add(){
+		if ($this->Auth->user("admin")==0) {
+			$this->Flash->set("Usted no tiene privilegios de administrador");
+			$this->redirect("/admin");
+		}
+
 		if ($this->request->is("post")) {
 			$this->Anuncio->create();
 			if ($this->Anuncio->save($this->request->data)) {
@@ -25,6 +35,11 @@ class AnunciosController extends AppController {
 	}
 	/***********************************************************/
 	public function admin_edit($id = null){
+		if ($this->Auth->user("admin")==0) {
+			$this->Flash->set("Usted no tiene privilegios de administrador");
+			$this->redirect("/admin");
+		}
+
 		if (!$data = $this->Anuncio->findById($id)) {
 			$this->Flash->set("No se encuentra el anuncio.");
 			$this->redirect("/admin/anuncios");
@@ -43,6 +58,11 @@ class AnunciosController extends AppController {
 	}
 	/***********************************************************/
 	public function admin_delete($id = null){
+		if ($this->Auth->user("admin")==0) {
+			$this->Flash->set("Usted no tiene privilegios de administrador");
+			$this->redirect("/admin");
+		}
+
 		if ($this->Anuncio->delete($id)) {
 			$this->Flash->set("Se ha borrado el anuncio");
 		}else{

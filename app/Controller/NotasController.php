@@ -50,6 +50,11 @@ class NotasController extends AppController {
 	}
 	/***********************************************************/
 	public function admin_delete($id = null){
+		if ($this->Auth->user("admin")==0) {
+			$this->Flash->set("Usted no tiene privilegios de administrador");
+			$this->redirect("/admin");
+		}
+
 		if ($this->Notas->delete($id)) {
 			$this->Flash->set("Se ha borrado la nota");
 		}else{

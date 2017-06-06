@@ -28,6 +28,11 @@ class CategoriasController extends AppController {
 	}
 	/***********************************************************/
 	public function admin_add(){
+		if ($this->Auth->user("admin")==0) {
+			$this->Flash->set("Usted no tiene privilegios de administrador");
+			$this->redirect("/admin/categorias");
+		}
+
 		if ($this->request->is("post")) {
 			$this->Categoria->create();
 			if ($this->Categoria->save($this->request->data)) {
@@ -45,6 +50,11 @@ class CategoriasController extends AppController {
 	}
 	/***********************************************************/
 	public function admin_edit($id=null){
+		if ($this->Auth->user("admin")==0) {
+			$this->Flash->set("Usted no tiene privilegios de administrador");
+			$this->redirect("/admin/categorias");
+		}
+		
 		if (!$data = $this->Categoria->findById($id)) {
 			$this->Flash->set("No se ha encontrado la categoría");
 			$this->redirect("/admin/categorias");
@@ -76,6 +86,11 @@ class CategoriasController extends AppController {
 	}
 	/***********************************************************/
 	public function admin_delete($id = null){
+		if ($this->Auth->user("admin")==0) {
+			$this->Flash->set("Usted no tiene privilegios de administrador");
+			$this->redirect("/admin/categorias");
+		}
+		
 		if ($this->Categoria->delete($id)) {
 			$this->Flash->set("Se ha borrado la categoria");
 		}else{
@@ -93,6 +108,11 @@ class CategoriasController extends AppController {
 	}
 	/***********************************************************/
 	public function admin_ordenar(){
+		if ($this->Auth->user("admin")==0) {
+			$this->Flash->set("Usted no tiene privilegios de administrador");
+			$this->redirect("/admin/categorias");
+		}
+		
 		if ($this->request->is("post")) {
 			$this->log(print_r($this->request->data,true));
 			foreach ($this->request->data as $data) {
