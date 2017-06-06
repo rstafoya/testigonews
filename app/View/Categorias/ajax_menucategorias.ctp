@@ -51,7 +51,8 @@ foreach ($categorias as $cat) {
 			</ul>
 
 			<ul class="right">
-				<li><input type="text" class="barra" id=textobuscador></li>
+				<li><i id=buscale class="material-icons">search</i></li>
+				<li><input style="width:0px !important;padding: 0px !important;" type="text" class="barra" id=textobuscador></li>
 			</ul>
 
 
@@ -81,20 +82,43 @@ foreach ($categorias as $cat) {
 	}
 </style>
 <script>
+	$("#buscale").click(function() {
+		$("#textobuscador").css({
+			'width': '150px',
+			'padding-left': '5px',
+			'padding-right': '5px',
+		});
+		$("#textobuscador").focus();
+		$(this).fadeOut();
+	});
 	$("#textobuscador").keyup(function(event) {
-		var palabras = '';
-		var lista = $("#textobuscador").val().split(" ")
+		if (event.keyCode==13) {
+			var palabras = '';
+			var lista = $("#textobuscador").val().split(" ")
 
-		for (var i = lista.length - 1; i >= 0; i--) {
-			if (lista[i].length>=3) {
-				palabras =lista[i]+ " "+ palabras ;
+			for (var i = lista.length - 1; i >= 0; i--) {
+				if (lista[i].length>=3) {
+					palabras =lista[i]+ " "+ palabras ;
+				}
 			}
-		}
-		palabras = palabras.trim()
-		palabras = palabras.replace(/ /g, '-');
 
-		if (event.keyCode==13 && palabras.length>=3) {
-			location.href="/notas/buscar/"+palabras;
+			palabras = palabras.trim();
+			palabras = palabras.toLowerCase();
+			validos = "qazxswedcvfrtgbnhyujmkiolñp- ";
+			sano="";
+
+			for (var i = 0; i < palabras.length; i++) {
+				c=palabras[i];
+				if (validos.indexOf(c)>=0) {
+					sano = sano + c;
+				}
+			}
+
+			palabras = sano;
+			palabras = palabras.replace(/ /g, '-');
+			if (palabras.length > 3) {
+				location.href="/notas/buscar/"+palabras;
+			}
 		}
 	});
 </script>

@@ -59,6 +59,18 @@ class NotasController extends AppController {
 	}
 	/***********************************************************/
 	public function buscar($cad=''){
+		
+		$valido="";
+		$cad=strtolower($cad);
+
+		for ($i=0; $i < strlen($cad); $i++) { 
+			$c=$cad[$i];
+			if (strpos(" -qwertyuiopasdfghjklñzxcvbnm7894561230 ", $c)) {
+				$valido.=$c;
+			}			
+		}
+		$cad=$valido;
+
 		if ($cad=='') {
 			$this->redirect("/");
 		}else{
@@ -67,7 +79,7 @@ class NotasController extends AppController {
 			foreach ($lista as $l) {
 				$cond[]=["Nota.titulo like '%$l%'"];
 			}
-			$titulos = $this->Nota->find("all",[
+			$titulos = $this->Nota->find("all",$op=[
 				'recursive'=>-1,
 				'fields'=>['titulo','imagen_de_portada','resumen','id','created'],
 				'conditions'=>$cond,

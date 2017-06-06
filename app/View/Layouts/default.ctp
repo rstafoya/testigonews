@@ -43,7 +43,9 @@
 					</span>
 				</div>
 				<div class="row">
-					<div class="col s12 ajaxload" data-ajax="/categorias/ajax_menucategorias"></div>
+					<div class="col s12 ajaxload" data-ajax="/categorias/ajax_menucategorias">
+						<nav class="colortestigo"></nav>
+					</div>
 				</div>
 			</div>
 		</header>
