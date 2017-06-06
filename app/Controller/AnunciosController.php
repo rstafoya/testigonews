@@ -8,7 +8,7 @@ class AnunciosController extends AppController {
 	}
 	/***********************************************************/
 	public function admin_index(){
-		if ($this->Auth->user("admin")==0) {
+		if ($this->Auth->user("administrador")==0) {
 			$this->Flash->set("Usted no tiene privilegios de administrador");
 			$this->redirect("/admin");
 		}
@@ -17,7 +17,7 @@ class AnunciosController extends AppController {
 	}
 	/***********************************************************/
 	public function admin_add(){
-		if ($this->Auth->user("admin")==0) {
+		if ($this->Auth->user("administrador")==0) {
 			$this->Flash->set("Usted no tiene privilegios de administrador");
 			$this->redirect("/admin");
 		}
@@ -35,7 +35,7 @@ class AnunciosController extends AppController {
 	}
 	/***********************************************************/
 	public function admin_edit($id = null){
-		if ($this->Auth->user("admin")==0) {
+		if ($this->Auth->user("administrador")==0) {
 			$this->Flash->set("Usted no tiene privilegios de administrador");
 			$this->redirect("/admin");
 		}
@@ -58,7 +58,7 @@ class AnunciosController extends AppController {
 	}
 	/***********************************************************/
 	public function admin_delete($id = null){
-		if ($this->Auth->user("admin")==0) {
+		if ($this->Auth->user("administrador")==0) {
 			$this->Flash->set("Usted no tiene privilegios de administrador");
 			$this->redirect("/admin");
 		}
