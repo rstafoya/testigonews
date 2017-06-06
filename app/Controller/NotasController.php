@@ -80,8 +80,8 @@ class NotasController extends AppController {
 				$cond[]=["Nota.titulo like '%$l%'"];
 			}
 			$titulos = $this->Nota->find("all",$op=[
-				'recursive'=>-1,
-				'fields'=>['titulo','imagen_de_portada','resumen','id','created'],
+				'recursive'=>1,
+				'fields'=>['Nota.titulo','Nota.imagen_de_portada','Nota.resumen','Nota.id','Nota.created','Categoria.nombre'],
 				'conditions'=>$cond,
 				'limit'=>12*3,
 				'order'=>'created desc'
