@@ -28,6 +28,7 @@
 				<li><a href="/admin/notas">Notas</a></li>
 				<li><a href="/admin/anuncios">Anuncios</a></li>
 				<li><a href="/admin/users">Usuarios</a></li>
+				<li><a href="/logout">Salir</a></li>
 			</ul>
 		</div>
 	</nav>
