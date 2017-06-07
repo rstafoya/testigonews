@@ -12,6 +12,7 @@
 	<script type="text/javascript" src="/js/jquery-2.1.1.min.js"></script>
 	<script type="text/javascript" src="/js/materialize.min.js"></script>
 	<script type="text/javascript" src="/js/general.js"></script>
+	<script type="text/javascript" src="/js/js.cookie.js"></script>
 
 	<title><?php echo $this->fetch('title'); ?></title>
 </head>
@@ -63,13 +64,5 @@
 		</footer>
 	</div>
 	<?php echo $this->Session->flash(); ?>
-	<div id="modal1" class="modal">
-		<div class="modal-content">
-			<form action="/notas/buscar" method="post">
-				<div class="item-field"><input id="cadenabusqueda" type="text"></div>
-				<input type="submit" value="Buscar" class="btn colortestigo">
-			</form>
-		</div>
-	</div>
 </body>
 </html>

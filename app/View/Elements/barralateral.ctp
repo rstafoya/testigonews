@@ -1,11 +1,4 @@
 <div class="col m3 hide-on-small-only">
-	<div class="row">
-		<div class="col s12">
-			<div id='gcw_mainFVvDtSJdL' class='gcw_mainFVvDtSJdL'></div>
-			<a id='gcw_siteFVvDtSJdL' href='https://freecurrencyrates.com/es/'>FreeCurrencyRates.com</a>
-			<script>function reloadFVvDtSJdL(){ var sc = document.getElementById('scFVvDtSJdL');if (sc) sc.parentNode.removeChild(sc);sc = document.createElement('script');sc.type = 'text/javascript';sc.charset = 'UTF-8';sc.async = true;sc.id='scFVvDtSJdL';sc.src = 'https://freecurrencyrates.com/es/widget-vertical?iso=USDMXNEURGBPJPYCNY&df=2&p=FVvDtSJdL&v=fits&source=fcr&width=245&width_title=0&firstrowvalue=1&thm=A6C9E2,FCFDFD,4297D7,5C9CCC,FFFFFF,C5DBEC,FCFDFD,2E6E9E,000000&title=Conversor%20de%20divisas&tzo=300';var div = document.getElementById('gcw_mainFVvDtSJdL');div.parentNode.insertBefore(sc, div);} reloadFVvDtSJdL(); </script>
-		</div>
-	</div>
 
 	<div class="row">
 		<div class="col s12 ajaxload" data-ajax="/anuncios/random/1">
