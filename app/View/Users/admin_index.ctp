@@ -3,7 +3,7 @@
 		<div class="card">
 			<div class="card-content">
 				<div class="card-title">Lista de usuarios</div>
-				<table class="highlight">>
+				<table class="highlight">
 					<tr>
 						<th>Nombre</th>
 						<th>email</th>
@@ -27,6 +27,7 @@
 			</div>
 			<div class="card-action">
 				<a href="/admin/users/registrar">Registrar un nuevo usuario</a>
+				<a href="/admin/users/changepassword">Cambiar contraseña</a>
 			</div>
 		</div>
 	</div>

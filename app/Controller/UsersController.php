@@ -87,4 +87,19 @@ class UsersController extends AppController {
 		}
 		$this->redirect('/admin/users');
 	}
+	/***********************************************************/
+	public function admin_changepassword(){
+		if ($this->request->is("post")) {
+			if ($this->request->data["User"]['password'] == $this->request->data["User"]['confirmapassword']) {
+				$this->request->data['User']["id"]=$this->Auth->user("id");
+
+				$this->User->save($this->request->data);
+				$this->Flash->set("La cotraseña fue actualizada con éxito");				
+				$this->redirect("/admin/users");
+			}else{
+				$this->Flash->set("Las contraseñas no son iguales");
+			}
+		}
+	}
+	/***********************************************************/
 }
