@@ -1,5 +1,5 @@
 <?php
-if (isset($_FILES["archivo_a_subir"])) {
+if (isset($_FILES["archivo_a_subir"])) {         // SUBIR ARCHIVO
 	$target_dir = "./";
 	$ext = explode('.', $_FILES['archivo_a_subir']['name']);
 	$ext = strtolower(array_pop($ext));
@@ -109,7 +109,7 @@ if (isset($_FILES["archivo_a_subir"])) {
 	rsort($archivos);
 
 	foreach ($archivos as $a) {
-		if ($a!='dir.php') {
+		if (strpos($a, '.png')>0 or strpos($a, '.jpg')>0 or strpos($a, '.jpeg')>0 or strpos($a, '.gif')>0) {
 			echo '<img class="miniatura" src="/img/media/'.$a.'">';
 		}
 	}
