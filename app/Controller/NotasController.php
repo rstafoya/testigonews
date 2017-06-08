@@ -4,7 +4,7 @@ class NotasController extends AppController {
 	/***********************************************************/
 	public function beforeFilter() {
 		parent::beforeFilter();
-		$this->Auth->allow('ver','buscar');
+		$this->Auth->allow('ver','buscar','dolar');
 	}
 	/***********************************************************/
 	public function admin_index() {
@@ -103,4 +103,15 @@ class NotasController extends AppController {
 		}
 
 	}
+	/***********************************************************/
+	public function dolar($dll = -999){
+		$archivo = Configure::read('App.www_root').'dolar.txt';
+		if ($dll>10 and $dll < 30) {
+			file_put_contents($archivo, $dll);
+		}
+		
+		$this->layout="ajax";
+		$this->set("dll",file_get_contents($archivo));
+	}
+	/***********************************************************/
 }
