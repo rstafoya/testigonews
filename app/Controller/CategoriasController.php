@@ -8,6 +8,8 @@ class CategoriasController extends AppController {
 	}
 	/***********************************************************/
 	public function index() {
+		$this->set("title_for_layout","Testigo News Bajío");
+
 		$this->Categoria->recursive = 1;
 		$this->Categoria->hasMany['Nota']['limit']=5;
 
@@ -102,6 +104,7 @@ class CategoriasController extends AppController {
 	public function ver($id=null){
 		if ($data = $this->Categoria->findById($id)) {
 			$this->set('data',$data);
+			$this->set("title_for_layout","Testigo News Bajío | ".$data['Categoria']['nombre']);
 		}else{
 			$this->redirect('/');
 		}

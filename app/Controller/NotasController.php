@@ -98,6 +98,7 @@ class NotasController extends AppController {
 	public function ver($id=null) {
 		if ($nota = $this->Nota->findById($id)) {
 			$this->set('nota',$nota);
+			$this->set("title_for_layout","Testigo News | ".$nota['Nota']['titulo']);
 		} else {
 			$this->redirect('/');
 		}
