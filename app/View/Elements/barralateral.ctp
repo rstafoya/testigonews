@@ -1,15 +1,6 @@
 <div class="col m3 hide-on-small-only">
 
 	<div class="row">
-		<div class="col s12">
-			<div style="background:#ccc; border-radius: 4px; padding:10px; color:#333;">
-				<b><small>Tipo de cambio:<br>
-						1 USD = <?php echo file_get_contents(Configure::read('App.www_root').'dolar.txt'); ?> MNX</small></b>
-			</div>
-		</div>
-	</div>
-
-	<div class="row">
 		<div class="col s12 ajaxload" data-ajax="/anuncios/random/1">
 		</div>
 	</div>
