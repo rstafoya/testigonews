@@ -4,6 +4,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta charset="UTF-8" />
 
+	<?php echo $this->fetch('meta'); ?>
+
 	<link rel="stylesheet" href="http://fonts.googleapis.com/icon?family=Material+Icons" />
 	<link rel="stylesheet" href="/css/materialize.min.css" />
 	<link rel="stylesheet" href="/css/estilo.css" />
@@ -27,8 +29,9 @@
 							<li><a href="mailto:contacto@testigonewsbajio.mx">Contacto</a></li>
 						</ul>
 						<ul class="right">
+							<li><a href="#">1 USD = <?php echo file_get_contents(Configure::read('App.www_root').'dolar.txt'); ?> MNX</a href="#"></li>
 							<li><a href="#"><img src="/img/icono_facebook.png"></a></li>
-							<li><a href="#"><img src="/img/icono_twitter.png" ></a></li>
+							<li><a href="#"><img src="/img/icono_twitter.png" ></a></li>							
 						</ul>
 					</div>
 				</nav>
