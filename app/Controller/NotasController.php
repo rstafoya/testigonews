@@ -55,7 +55,7 @@ class NotasController extends AppController {
 			$this->redirect("/admin");
 		}
 
-		if ($this->Notas->delete($id)) {
+		if ($this->Nota->delete($id)) {
 			$this->Flash->set("Se ha borrado la nota");
 		}else{
 			$this->Flash->set("No se ha podido borrar la nota");
@@ -64,15 +64,15 @@ class NotasController extends AppController {
 	}
 	/***********************************************************/
 	public function buscar($cad=''){
-		
+
 		$valido="";
 		$cad=strtolower($cad);
 
-		for ($i=0; $i < strlen($cad); $i++) { 
+		for ($i=0; $i < strlen($cad); $i++) {
 			$c=$cad[$i];
 			if (strpos(" -qwertyuiopasdfghjklñzxcvbnm7894561230 ", $c)) {
 				$valido.=$c;
-			}			
+			}
 		}
 		$cad=$valido;
 
@@ -110,7 +110,7 @@ class NotasController extends AppController {
 		if ($dll>10 and $dll < 30) {
 			file_put_contents($archivo, $dll);
 		}
-		
+
 		$this->layout="ajax";
 		$this->set("dll",file_get_contents($archivo));
 	}

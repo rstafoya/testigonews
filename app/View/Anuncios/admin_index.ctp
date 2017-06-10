@@ -3,7 +3,7 @@
 		<div class="card">
 			<div class="card-content">
 				<div class="card-title">Anuncios</div>
-				<table class="highlight">>
+				<table class="highlight">
 					<tr>
 						<th></th>
 						<th></th>

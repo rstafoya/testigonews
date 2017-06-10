@@ -31,7 +31,7 @@
 						<ul class="right">
 							<li><a href="#">1 USD = <?php echo file_get_contents(Configure::read('App.www_root').'dolar.txt'); ?> MNX</a href="#"></li>
 							<li><a href="#"><img src="/img/icono_facebook.png"></a></li>
-							<li><a href="#"><img src="/img/icono_twitter.png" ></a></li>							
+							<li><a href="#"><img src="/img/icono_twitter.png" ></a></li>
 						</ul>
 					</div>
 				</nav>
@@ -57,15 +57,14 @@
 		<main>
 			<?php echo $this->fetch('content'); ?>
 		</main>
-
-		<footer>
-			<div class="row white-text" style="background:#001C3C;">
-				<div class="col s12">
-					<p class="center">Testigo. Todos los derechos reservados</p>
-				</div>
-			</div>
-		</footer>
 	</div>
+	<footer>
+		<div class="row white-text" style="background:#001C3C;">
+			<div class="col s12">
+				<p class="center">Testigo. Todos los derechos reservados</p>
+			</div>
+		</div>
+	</footer>
 	<?php echo $this->Session->flash(); ?>
 </body>
 </html>

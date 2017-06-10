@@ -14,8 +14,10 @@
 <!--    Galería de las últimas cuatro notas    -->
 <div class="row hide-on-small-only">
 	<div class="col m2 s12 peque">
+	<?php if(isset($editorial['Nota'])): ?>
 		<h5><?=$editorial['Nota']['titulo']?></h5>
 		<p><?=nl2br($editorial['Nota']['resumen'])?></p>
+	<?php endif; ?>
 	</div>
 	<div class="col m6 s12" id="elmaximo">
 		<div class="slider">
