@@ -24,7 +24,7 @@
 			<ul class="slides">
 				<?php foreach($ultimos as $u):?>
 					<li>
-						<a href="/notas/ver/<?=$u['Nota']['id']?>">
+						<a href="/nota/<?=$u['Nota']['ruta']?>">
 							<img src="<?=$u['Nota']['imagen_de_portada']?>">
 							<div class="caption center-align">
 								<h4><?=$u['Nota']['titulo']?></h4>
@@ -40,7 +40,7 @@
 		<div class="row">
 			<?php foreach($ultimos as $u):?>
 				<div class="col s6">
-					<a class="altura" data-fondo="<?=$u['Nota']['imagen_de_portada']?>" href="/notas/ver/<?=$u['Nota']['id']?>">
+					<a class="altura" data-fondo="<?=$u['Nota']['imagen_de_portada']?>" href="/nota/<?=$u['Nota']['ruta']?>">
 						<span><?=$u['Nota']['titulo']?></span>
 					</a>
 				</div>
@@ -67,7 +67,7 @@
 					<!-- PRIMERA NOTA; LA MAS GRANDE -->
 					<?php $primero = $cat['Nota'][0] ?>
 					<div class="col m7 hide-on-small-only">
-						<a href="/notas/ver/<?=$primero['id']?>" class="altura" data-fondo="<?=$primero['imagen_de_portada']?>" style="height: 400px">
+						<a href="/nota/<?=$primero['ruta']?>" class="altura" data-fondo="<?=$primero['imagen_de_portada']?>" style="height: 400px">
 							<h5><?=$primero['titulo']?></h5>
 						</a>
 					</div>
@@ -79,7 +79,7 @@
 							<div class="col m5 notitas">
 						<?php endif;?>
 							<div class="row" style="margin-bottom: 0px;">
-								<a href="/notas/ver/<?=$nota['id']?>">
+								<a href="/nota/<?=$nota['ruta']?>">
 									<div class="col s4">
 										<img src="<?=$nota['imagen_de_portada']?>" alt="" class="responsive-img">
 									</div>

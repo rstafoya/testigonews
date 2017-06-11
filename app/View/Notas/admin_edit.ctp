@@ -43,14 +43,6 @@
 	$("label").addClass('active');
 	$("#NotaFechaDePublicacion").attr('type', 'date');
 	$("#NotaFechaFinal").attr('type', 'date');
-	
-	$("#NotaTitulo").keyup(function(event) {
-		var ruta = $("#NotaTitulo").val().toLowerCase()
-		ruta = ruta.replace(/[^a-zA-Z ]/g, "");
-		ruta = ruta.replace(/ /g,"_")
-		$("#NotaRuta").val(ruta)
-		$("#NotaRuta").prev().addClass('active');
-	});
 
 	$("#contenedor").hide();
 	$("#imagenes").click(function(){$("#contenedor").slideToggle()});

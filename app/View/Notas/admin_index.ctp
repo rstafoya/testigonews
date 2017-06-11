@@ -17,7 +17,7 @@
 					<td><?=$nota['User']['nombre']?></td>
 					<td><?=$nota['Categoria']['nombre']?></td>
 					<td>
-						<a class="btn small" href="/notas/ver/<?=$nota['Nota']['id']?>" target="_blank"><i class="material-icons">visibility</i></a>
+						<a class="btn small" href="/nota/<?=$nota['Nota']['ruta']?>" target="_blank"><i class="material-icons">visibility</i></a>
 						<a class="btn small" href="/admin/notas/edit/<?=$nota['Nota']['id']?>"><i class="material-icons">edit</i></a>
 						<a class="btn small" href="/admin/notas/delete/<?=$nota['Nota']['id']?>" onclick="return(confirm('¿Está seguro?'))"><i class="material-icons">delete</i></a>
 					</td>
@@ -33,6 +33,7 @@
 <script>
 	var j=0;
 	var size = 20
+	var reciente = <?=json_encode($ultimo)?>
 
 	$("#listado").before('<ul class="pagination"></ul>');
 	var pag = $("#listado").prev()

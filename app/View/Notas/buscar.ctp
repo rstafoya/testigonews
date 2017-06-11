@@ -17,7 +17,7 @@
 		<div class="col l3 m4 s6 hoverable">
 			<div class="notitas">
 				<div class="portadas" style="background-image: url(<?=$t['Nota']['imagen_de_portada']?>);"></div>
-				<a href="/notas/ver/<?=$t['Nota']['id']?>">
+				<a href="/nota/<?=$t['Nota']['ruta']?>">
 					<p class="chico">
 						<small><?=$t['Nota']['created']?></small><br>
 						<b style="color:rgb(0, 28, 60);"><?=$t['Categoria']['nombre']?></b><br>

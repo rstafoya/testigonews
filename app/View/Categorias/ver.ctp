@@ -8,7 +8,7 @@
 	<div class="col m9 s12">
 		<?php foreach($data['Nota'] as $nota):?>
 			<div class="row" style="border-top: 1px solid rgb(160, 16, 39)">
-				<a href="/notas/ver/<?=$nota['id']?>">
+				<a href="/nota/<?=$nota['ruta']?>">
 					<div class="col s12">
 						<h5><?=$nota['titulo']?></h5>
 					</div>

@@ -8,7 +8,7 @@
 
 	$this->Html->meta(['property'	=>	'og:title',	'value'	=>	$nota['Nota']['titulo']],'',['inline'=>false]);
 	$this->Html->meta(['property'	=>	'og:type',	'value'	=>	'article'],'',['inline'=>false]);
-	$this->Html->meta(['property'	=>	'og:url',	'value'	=>	'http://testigonewsbajio.mx/notas/ver/'.$nota['Nota']['id']],'',['inline'=>false]);
+	$this->Html->meta(['property'	=>	'og:url',	'value'	=>	'http://testigonewsbajio.mx/nota/'.$nota['Nota']['ruta']],'',['inline'=>false]);
 	$this->Html->meta(['property'	=>	'og:image',	'value'	=>	'http://testigonewsbajio.mx'.$nota['Nota']['imagen_de_portada']],'',['inline'=>false]);
 	$this->Html->meta(['property'	=>	'og:description',	'value'	=>	$nota['Nota']['resumen']],'',['inline'=>false]);
 	$this->Html->meta(['property'	=>	'og:site_name',	'value'	=>	'Testigo News Bajío'],'',['inline'=>false]);
@@ -19,7 +19,11 @@
 		<div class="row">
 			<div class="col s12">
 				<h4><?=$nota['Nota']['titulo']?></h4>
-				<p>por <strong><?=$nota['User']['nombre'].'</strong> el '.$nota['Nota']['fecha_de_publicacion']?></p>
+				<p>
+					<img src="<?=$nota['Nota']['imagen_de_portada']?>" width=1>
+					por <strong><?=$nota['User']['nombre'].'</strong> el '.$nota['Nota']['fecha_de_publicacion']?>
+					en <a href="/categorias/ver/<?=$nota['Categoria']['id']?>"><?=$nota['Categoria']['nombre']?></a>
+				</p>
 				<img src="<?=$nota['Nota']['imagen_de_portada']?>" height="400" class="img-altofijo">
 				<div id="contenidodelanota">
 					<?=nl2br($nota['Nota']['contenido'])?>

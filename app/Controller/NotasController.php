@@ -95,14 +95,17 @@ class NotasController extends AppController {
 		}
 	}
 	/***********************************************************/
-	public function ver($id=null) {
-		if ($nota = $this->Nota->findById($id)) {
+	public function ver($ruta) {
+		$ruta=$this->request->params['ruta'];
+
+		if ($nota = $this->Nota->find('first',[
+			'conditions'=>['Nota.ruta'=>$ruta]
+			])) {
 			$this->set('nota',$nota);
 			$this->set("title_for_layout","Testigo News | ".$nota['Nota']['titulo']);
 		} else {
-			$this->redirect('/');
+//			$this->redirect('/');
 		}
-
 	}
 	/***********************************************************/
 	public function dolar($dll = -999){
