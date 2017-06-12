@@ -27,7 +27,6 @@ class NotasController extends AppController {
 		}else{
 			$this->set("categorias",$this->Nota->Categoria->find("list"));
 		}
-
 	}
 	/***********************************************************/
 	public function admin_edit($id=null) {
@@ -97,14 +96,13 @@ class NotasController extends AppController {
 	/***********************************************************/
 	public function ver($ruta) {
 		$ruta=$this->request->params['ruta'];
+		$opciones = ['conditions'=>['Nota.ruta'=>$ruta]];
 
-		if ($nota = $this->Nota->find('first',[
-			'conditions'=>['Nota.ruta'=>$ruta]
-			])) {
+		if ($nota = $this->Nota->find('first',$opciones)) {
 			$this->set('nota',$nota);
 			$this->set("title_for_layout","Testigo News | ".$nota['Nota']['titulo']);
 		} else {
-//			$this->redirect('/');
+			$this->redirect('/');
 		}
 	}
 	/***********************************************************/
