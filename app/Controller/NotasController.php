@@ -1,5 +1,20 @@
 <?php
 App::uses('AppController', 'Controller');
+function publica($evento, $titulo, $ruta, $resumen=''){
+	$titulo		=	urlencode($titulo);
+	$ruta		=	urlencode($ruta);
+	$resumen	=	urlencode($resumen);
+
+	$url		=	'https://maker.ifttt.com/trigger/'.$evento.'/with/key/pyWc4JgtUwD4yLwkf3FgKRSkFrfor8QE04Ym3SrUoxg';
+	$ch			=	curl_init($url);
+	$json		=	"value1=$titulo&value2=$ruta&value3=$resumen";
+
+	curl_setopt($ch, CURLOPT_POST, 1);
+	curl_setopt($ch, CURLOPT_POSTFIELDS, $json);
+
+	$response = curl_exec($ch);
+	curl_close($ch);
+}
 class NotasController extends AppController {
 	/***********************************************************/
 	public function beforeFilter() {
@@ -19,6 +34,13 @@ class NotasController extends AppController {
 			$this->Nota->create();
 			$this->request->data["Nota"]["user_id"]=$this->Auth->user("id");
 			if($this->Nota->save($this->request->data)){
+				$titulo		=	$this->request->data["Nota"]["titulo"];
+				$ruta		=	'http://testigonewsbajio.mx/nota/'.$this->request->data["Nota"]["ruta"];
+				$resumen	=	$this->request->data["Nota"]["resumen"];
+
+				publica('difunde_twitter',$titulo,$ruta,$resumen);
+				publica('difunde_facebook',$titulo,$ruta,$resumen);
+
 				$this->Flash->set("Se ha guardado la nota");
 				$this->redirect("/admin/");
 			}else{
