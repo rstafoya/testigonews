@@ -26,9 +26,14 @@ $(document).ready(function(){
 
 	if (Cookies.get('anunciomodal')!=1) {
 		Cookies.set("anunciomodal",1);
-		$("body").append('<div id="modalanuncio" class="modal"><div class="modal-content"><img class="responsive-img" src="http://testigonewsbajio.mx/img/media/20170607-104412.jpg"></div></div>');
-		$(".modal").modal();
-		$("#modalanuncio").modal('open');
+		$("body").append('<div id="modalanuncio" class="modal"><div class="modal-content" id="contenidomodal"></div></div>');
+		$.get('/anuncios/random/6', function(data) {
+			$("#contenidomodal").html(data);
+			if (data!='') {
+				$(".modal").modal();
+				$("#modalanuncio").modal('open');
+			}
+		});
 	}
 
 	/////////////////////////////////////////////////////////////
