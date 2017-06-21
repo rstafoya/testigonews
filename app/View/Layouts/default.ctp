@@ -39,12 +39,13 @@
 				<div class="col s12 l8 center">
 					<a href="/"><img class="responsive-img" src="/img/logotestigo.png"></a>
 				</div>
-				<div class="hide-on-small-only col l2">
-					<span style="display: block !important; text-align: center; font-family: sans-serif; font-size: 12px;">
-						<a href="http://espanol.wunderground.com/cgi-bin/findweather/getForecast?query=zmw:00000.63.76005&bannertypeclick=wu_blueglass" title="Guanajuato, México Weather Forecast" target="_blank">
-							<img src="http://weathersticker.wunderground.com/weathersticker/cgi-bin/banner/ban/wxBanner?bannertype=wu_blueglass_metric&airportcode=MMML&ForcedCity=Guanajuato&ForcedState=México&wmo=76005&language=SP" alt="Find more about Weather in Guanajuato, MX"/>
-						</a>
-					</span>
+				<div class="hide-on-small-only col l2" style="height:154px; overflow: hidden;">
+
+
+<a href="https://www.accuweather.com/es/mx/guanajuato/243360/weather-forecast/243360" class="aw-widget-legal">
+</a><div id="awcc1497976156916" class="aw-widget-current"  data-locationkey="243360" data-unit="c" data-language="es" data-useip="false" data-uid="awcc1497976156916"></div><script type="text/javascript" src="https://oap.accuweather.com/launch.js"></script>
+
+
 				</div>
 				<div class="row">
 					<div class="col s12 ajaxload" data-ajax="/categorias/ajax_menucategorias">
