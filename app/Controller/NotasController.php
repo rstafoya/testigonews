@@ -9,11 +9,11 @@ function publica($evento, $titulo, $ruta, $resumen=''){
 	$ch			=	curl_init($url);
 	$json		=	"value1=$titulo&value2=$ruta&value3=$resumen";
 
-	curl_setopt($ch, CURLOPT_POST, 1);
-	curl_setopt($ch, CURLOPT_POSTFIELDS, $json);
+	$saz=curl_setopt($ch, CURLOPT_POST, 1);
+	$saz=curl_setopt($ch, CURLOPT_POSTFIELDS, $json);
 
 	$response = curl_exec($ch);
-	curl_close($ch);
+	$saz=curl_close($ch);
 }
 class NotasController extends AppController {
 	/***********************************************************/
@@ -38,10 +38,15 @@ class NotasController extends AppController {
 				$ruta		=	'http://testigonewsbajio.mx/nota/'.$this->request->data["Nota"]["ruta"];
 				$resumen	=	$this->request->data["Nota"]["resumen"];
 
+				echo "<style>body{background:#ccc;}</style>\n\n<div style='padding: 50px; text-align:center;background:white;margin:100px auto; width:50%; font-size:20px; font-family: Helvetica, Arial; color:#333; '>";
 				publica('difunde_twitter',$titulo,$ruta,$resumen);
+				echo "<br><br>";
 				publica('difunde_facebook',$titulo,$ruta,$resumen);
+				echo "</div>\n\n";
 
 				$this->Flash->set("Se ha guardado la nota");
+
+				echo '<script>setTimeout(function(){location.href="/admin/"},1000)</script>';
 				$this->redirect("/admin/");
 			}else{
 				$this->Flash->set("ha ocurrido un error al momento de guardar la nota");
