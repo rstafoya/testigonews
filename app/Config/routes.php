@@ -17,7 +17,7 @@
  * to use (in this case, /app/View/Pages/home.ctp)...
  */
 
-//	Router::connect('/', array('controller' => 'categorias', 'action' => 'index'));
+	Router::connect('/', array('controller' => 'categorias', 'action' => 'index'));
 	Router::connect('/', array('controller' => 'pages', 'action' => 'display','home'));
 
 	Router::connect('/nota/:ruta', array('controller' => 'notas', 'action' => 'ver','ruta'));

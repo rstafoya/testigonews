@@ -14,13 +14,15 @@
 			scrolling="no"
 			frameborder="0"
 			allowTransparency="true"
-			src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fzonafrancapuntomx%2F&tabs=timeline&height=600&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=160136826418"></iframe>
+			src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Ftestigonewsbajio%2F&tabs=timeline&height=600&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=160136826418"></iframe>
 		</div>
 	</div>
 
 	<div class="row">
 		<div class="col s12">
-			<a class="twitter-timeline" data-lang="es" data-height="600" data-theme="light" href="https://twitter.com/Dios_Padre">Tweets by Dios_Padre</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+			<div style="height:600px; overflow-y:scroll;">
+				<a class="twitter-timeline"  href="https://twitter.com/testigobajio/lists/pol-tica-y-sucesos">Tweets from https://twitter.com/testigobajio/lists/politica</a>
+			</div>
+			<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 		</div>
 	</div>
-</div>

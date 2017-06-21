@@ -59,9 +59,14 @@
 		</main>
 	</div>
 	<footer>
-		<div class="row white-text" style="background:#001C3C;">
+		<div class="row white-text" style="background:#001C3C;margin:0px;">
 			<div class="col s12">
-				<p class="center">Testigo. Todos los derechos reservados</p>
+				<p class="center">
+				Testigo. Todos los derechos reservados<br>
+				<a href="mailto:contacto@testigonewsbajio.mx" style="display: block; text-align: center">
+				<div style="background:url(http://testigonewsbajio.mx/img/contacto.png); width:70px; margin:auto; height:70px; background-size:cover;"></div><br>
+				Contacto</a>
+				</p>
 			</div>
 		</div>
 	</footer>

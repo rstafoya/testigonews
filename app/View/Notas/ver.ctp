@@ -1,17 +1,22 @@
 <?php
+	$this->Html->meta(['name'	=>	'Title',		'value'	=>	$nota['Nota']['titulo']],'',['inline' => false]);
+	$this->Html->meta(['name'	=>	'Description',	'value'	=>	$nota['Nota']['resumen']],'',['inline' => false]);
+	$this->Html->meta(['name'	=>	'Author',		'value'	=>	'@TestigoBajio'],'',['inline' => false]);
+	$this->Html->meta(['name'	=>	'Image',		'value'	=>	'http://testigonewsbajio.mx'.$nota['Nota']['imagen_de_portada']],'',['inline' => false]);
+
 	$this->Html->meta(['name'	=>	'twitter:card',			'value'	=>	'summary'],'',['inline' => false]);
-	$this->Html->meta(['name'	=>	'twitter:site',			'value'	=>	'@TstigoNewsBajio'],'',['inline' => false]);
+	$this->Html->meta(['name'	=>	'twitter:site',			'value'	=>	'@TestigoBajio'],'',['inline' => false]);
 	$this->Html->meta(['name'	=>	'twitter:title',		'value'	=>	$nota['Nota']['titulo']],'',['inline' => false]);
 	$this->Html->meta(['name'	=>	'twitter:description',	'value'	=>	substr($nota['Nota']['resumen'],0,199)],'',['inline' => false]);
-	$this->Html->meta(['name'	=>	'twitter:creator',		'value'	=>	'@TstigoNewsBajio'],'',['inline' => false]);
+	$this->Html->meta(['name'	=>	'twitter:creator',		'value'	=>	'@TestigoBajio'],'',['inline' => false]);
 	$this->Html->meta(['name'	=>	'twitter:image',		'value'	=>	'http://testigonewsbajio.mx'.$nota['Nota']['imagen_de_portada']],'',['inline' => false]);
 
-	$this->Html->meta(['property'	=>	'og:title',	'value'	=>	$nota['Nota']['titulo']],'',['inline'=>false]);
-	$this->Html->meta(['property'	=>	'og:type',	'value'	=>	'article'],'',['inline'=>false]);
-	$this->Html->meta(['property'	=>	'og:url',	'value'	=>	'http://testigonewsbajio.mx/nota/'.$nota['Nota']['ruta']],'',['inline'=>false]);
-	$this->Html->meta(['property'	=>	'og:image',	'value'	=>	'http://testigonewsbajio.mx'.$nota['Nota']['imagen_de_portada']],'',['inline'=>false]);
+	$this->Html->meta(['property'	=>	'og:url',			'value'	=>	'http://testigonewsbajio.mx/nota/'.$nota['Nota']['ruta']],'',['inline'=>false]);
+	$this->Html->meta(['property'	=>	'og:type',			'value'	=>	'article'],'',['inline'=>false]);
+	$this->Html->meta(['property'	=>	'og:title',			'value'	=>	$nota['Nota']['titulo']],'',['inline'=>false]);
 	$this->Html->meta(['property'	=>	'og:description',	'value'	=>	$nota['Nota']['resumen']],'',['inline'=>false]);
-	$this->Html->meta(['property'	=>	'og:site_name',	'value'	=>	'Testigo News Bajío'],'',['inline'=>false]);
+	$this->Html->meta(['property'	=>	'og:image',			'value'	=>	'http://testigonewsbajio.mx'.$nota['Nota']['imagen_de_portada']],'',['inline'=>false]);
+	$this->Html->meta(['property'	=>	'og:site_name',		'value'	=>	'Testigo News Bajío'],'',['inline'=>false]);
 ?>
 
 <div class="row">

@@ -126,7 +126,7 @@ if (isset($_FILES["archivo_a_subir"])) {         // SUBIR ARCHIVO
 	</div>
 	<div class="sombra seleccionar">
 		<div class="ventana">
-			<input type="range" min="20" max="900" value="200" id="altura" style="width: 600px; margin:10px;"><br>
+			<input type="range" min="20" max="900" value="200" id="altura" style="width: 90%; margin:10px;"><span id="ancho"></span><br>
 			<input type="text" id="codigo" style="width: 45%; text-align: center; margin:10px;">
 			<input type="text" id="imagen_src" style="width: 45%; text-align: center; margin:10px;"><br>
 			<img class="imagenseleccionada" src="">
@@ -154,6 +154,7 @@ if (isset($_FILES["archivo_a_subir"])) {         // SUBIR ARCHIVO
 			$(".sombra.subir").fadeIn();
 		});
 		$("#altura").on('change input',function(event) {
+			$("#ancho").text($("#altura").val());
 			$(".imagenseleccionada").width($("#altura").val())
 			$("#codigo").val("<img src='"+$(".imagenseleccionada").attr('src')+"' style='width:"+$("#altura").val()+"px' />")
 		});
