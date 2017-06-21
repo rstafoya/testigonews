@@ -17,11 +17,14 @@ class CategoriasController extends AppController {
 			'order'=>'Nota.created',
 			'conditions'=>['Nota.categoria_id'=>'4'],
 			]));
-		$this->set('categorias', $this->Categoria->find('all'));
+
 		$this->set('ultimos',$this->Categoria->Nota->find('all',[
 			'limit'=>4,
 			'order'=>'Nota.id desc',
 			]));
+
+		$this->Categoria->hasMany['Nota']['order']='Nota.id desc';
+		$this->set('categorias', $this->Categoria->find('all'));
 	}
 	/***********************************************************/
 	public function admin_index() {
