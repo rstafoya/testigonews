@@ -141,7 +141,7 @@ if (isset($_FILES["archivo_a_subir"])) {         // SUBIR ARCHIVO
 		$("#menos").click(function(event) {
 			$(".miniatura").animate({'height':$(".miniatura").height()*.7},'fast')
 		});
-		$(".cancelar").click(function(event) {
+		$(".cancelar, .sombra").click(function(event) {
 			$(".sombra").fadeOut('fast');
 		});
 		$(".miniatura").click(function(event) {
