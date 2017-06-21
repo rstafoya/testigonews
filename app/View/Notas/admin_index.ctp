@@ -7,7 +7,7 @@
 					<th>Título</th>
 					<th>Autor</th>
 					<th>Categoría</th>
-					<th></th>
+					<th style="width:160px;"></th>
 				</tr>
 			</thead>
 			<tbody>
