@@ -126,7 +126,7 @@ if (isset($_FILES["archivo_a_subir"])) {         // SUBIR ARCHIVO
 	</div>
 	<div class="sombra seleccionar">
 		<div class="ventana">
-			<input type="range" min="20" max="900" value="200" id="altura" style="width: 90%; margin:10px;"><span id="ancho"></span><br>
+			<input type="range" min="20" max="900" value="700" id="altura" style="width: 90%; margin:10px;"><span id="ancho"></span><br>
 			<input type="text" id="codigo" style="width: 45%; text-align: center; margin:10px;">
 			<input type="text" id="imagen_src" style="width: 45%; text-align: center; margin:10px;"><br>
 			<img class="imagenseleccionada" src="">
@@ -138,25 +138,34 @@ if (isset($_FILES["archivo_a_subir"])) {         // SUBIR ARCHIVO
 		$("#mas").click(function(event) {
 			$(".miniatura").animate({'height':$(".miniatura").height()*1.4},'fast')
 		});
+
 		$("#menos").click(function(event) {
 			$(".miniatura").animate({'height':$(".miniatura").height()*.7},'fast')
 		});
+
 		$(".cancelar, .sombra").click(function(event) {
 			$(".sombra").fadeOut('fast');
 		});
+		
+		$(".ventana").click(function(event) {
+			event.stopPropagation()
+		});
+
 		$(".miniatura").click(function(event) {
-			$(".imagenseleccionada").attr('src', $(this).attr('src'));
+			$(".imagenseleccionada").attr({'src': $(this).attr('src'),'width':700});
 			$(".sombra.seleccionar").fadeIn();
-			$("#codigo").val("<img src='"+$(".imagenseleccionada").attr('src')+"'>")
+			$("#codigo").val("<img width=700 src='"+$(".imagenseleccionada").attr('src')+"'>")
 			$("#imagen_src").val($(".imagenseleccionada").attr('src'))
 		});
+
 		$("#subir").click(function() {
 			$(".sombra.subir").fadeIn();
 		});
+
 		$("#altura").on('change input',function(event) {
 			$("#ancho").text($("#altura").val());
-			$(".imagenseleccionada").width($("#altura").val())
-			$("#codigo").val("<img src='"+$(".imagenseleccionada").attr('src')+"' style='width:"+$("#altura").val()+"px' />")
+			$(".imagenseleccionada").attr('width',$("#altura").val())
+			$("#codigo").val("<img width="+$("#altura").val()+" src='"+$(".imagenseleccionada").attr('src')+"'/>")
 		});
 	</script>
 </body>
