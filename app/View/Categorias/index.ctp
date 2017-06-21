@@ -10,14 +10,21 @@
 		font-size: 80%;
 		text-align: justify;
 	}
+	.cuadrito{
+		margin-bottom: 20px;
+	}
+	.altura{
+		height:190px;
+		font-size: 90%;
+	}
 </style>
 <!--    Galería de las últimas cuatro notas    -->
 <div class="row hide-on-small-only">
 	<div class="col m2 s12 peque">
-	<?php if(isset($editorial['Nota'])): ?>
-		<h5><?=$editorial['Nota']['titulo']?></h5>
-		<p><?=nl2br($editorial['Nota']['resumen'])?></p>
-	<?php endif; ?>
+		<?php if(isset($editorial['Nota'])): ?>
+			<h5><?=$editorial['Nota']['titulo']?></h5>
+			<p><?=nl2br($editorial['Nota']['resumen'])?></p>
+		<?php endif; ?>
 	</div>
 	<div class="col m6 s12" id="elmaximo">
 		<div class="slider">
@@ -39,8 +46,8 @@
 	<div class="col m4">
 		<div class="row">
 			<?php foreach($ultimos as $u):?>
-				<div class="col s6">
-					<a class="altura" data-fondo="<?=$u['Nota']['imagen_de_portada']?>" href="/nota/<?=$u['Nota']['ruta']?>">
+				<div class="col s6 cuadrito">
+					<a class="altura hoverable z-depth-2" data-fondo="<?=$u['Nota']['imagen_de_portada']?>" href="/nota/<?=$u['Nota']['ruta']?>">
 						<span><?=$u['Nota']['titulo']?></span>
 					</a>
 				</div>
@@ -75,28 +82,28 @@
 					<?php foreach($cat['Nota'] as $nota):?>
 						<?php if(($j++)==0):?>
 							<div class="col m5 notitas hide-on-med-and-up">
-						<?php else:?>
-							<div class="col m5 notitas">
-						<?php endif;?>
-							<div class="row" style="margin-bottom: 0px;">
-								<a href="/nota/<?=$nota['ruta']?>">
-									<div class="col s4">
-										<img src="<?=$nota['imagen_de_portada']?>" alt="" class="responsive-img">
-									</div>
-									<div class="col s8 chico">
-										<?=$nota['titulo']?>
-									</div>
-								</a>
+							<?php else:?>
+								<div class="col m5 notitas">
+								<?php endif;?>
+								<div class="row" style="margin-bottom: 0px;">
+									<a href="/nota/<?=$nota['ruta']?>">
+										<div class="col s4">
+											<img src="<?=$nota['imagen_de_portada']?>" alt="" class="responsive-img">
+										</div>
+										<div class="col s8 chico">
+											<?=$nota['titulo']?>
+										</div>
+									</a>
+								</div>
 							</div>
-						</div>
-					<?php endforeach; ?>
-				</div>
-			<?php endif; ?>
-		<?php endforeach; ?>
-	</div>
+						<?php endforeach; ?>
+					</div>
+				<?php endif; ?>
+			<?php endforeach; ?>
+		</div>
 
-	<?=$this->Element('barralateral')?>
-</div>
-<script>
-	$(".peque").height($("#elmaximo").height())
-</script>
+		<?=$this->Element('barralateral')?>
+	</div>
+	<script>
+		$(".peque").height($("#elmaximo").height())
+	</script>
