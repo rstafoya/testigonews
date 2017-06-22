@@ -31,7 +31,7 @@
 				<?=$this->Form->input("resumen",['default'=>$notas['Nota']['resumen']])?>
 
 				<span class="btn" id="imagenes">Imágenes <i class="material-icons right">archive</i></span>
-				<iframe id="contenedor" src="/img/media/dir.php" frameborder="0" width="100%" height="800"></iframe>
+				<iframe id="contenedor" src="/img/media/dir.php" frameborder="0" width="100%" height="400"></iframe>
 
 				<?=$this->Form->input("contenido",["class"=>"wysiwygeditor","default"=>$notas['Nota']['contenido']])?>
 				<?=$this->Form->end(['label'=>'Guardar','class'=>'btn btn-large botonfixed'])?>

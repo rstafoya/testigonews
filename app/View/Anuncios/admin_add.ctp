@@ -17,7 +17,7 @@
 				<?=$this->Form->input('nombre')?>
 
 				<span class="btn" id="imagenes">Imágenes <i class="material-icons right">archive</i></span>
-				<iframe id="contenedor" src="/img/media/dir.php" frameborder="0" width="100%" height="500"></iframe>
+				<iframe id="contenedor" src="/img/media/dir.php" frameborder="0" width="100%" height="400"></iframe>
 
 				<?=$this->Form->input('imagen')?>
 				<?=$this->Form->input('codigo')?>
@@ -36,5 +36,5 @@
 	$("#AnuncioFinal").attr('type','date');
 
 	$("#contenedor").hide();
-	$("#imagenes").click(function(){$("#contenedor").slideToggle()});	
+	$("#imagenes").click(function(){$("#contenedor").slideToggle()});
 </script>

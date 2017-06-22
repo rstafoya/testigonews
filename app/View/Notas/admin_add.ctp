@@ -29,7 +29,7 @@
 				<?=$this->Form->input("resumen")?>
 
 				<span class="btn" id="imagenes">Imágenes <i class="material-icons right">archive</i></span>
-				<iframe id="contenedor" src="/img/media/dir.php" frameborder="0" width="100%" height="500"></iframe>
+				<iframe id="contenedor" src="/img/media/dir.php" frameborder="0" width="100%" height="400"></iframe>
 
 				<?=$this->Form->input("contenido",["class"=>"wysiwygeditor"])?>
 				<?=$this->Form->end(['label'=>'Guardar','class'=>'btn btn-large botonfixed'])?>
