@@ -36,9 +36,7 @@
 					</div>
 				</nav>
 				<div class="hide-on-small-only col l2 ajaxload" data-ajax="/anuncios/random/4"></div>
-				<div class="col s12 l8 center">
-					<a href="/"><img class="responsive-img" src="/img/logotestigo.png"></a>
-				</div>
+				<div class="col s12 l8 center" id="logo"></div>
 				<div class="hide-on-small-only col l2" style="height:154px; overflow: hidden;">
 
 
