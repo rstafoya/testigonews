@@ -1,11 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta charset="UTF-8" />
-
-	<?php echo $this->fetch('meta'); ?>
-
+<?php echo str_replace('"/>', "\" />\n", $this->fetch('meta')) ?>
 	<link rel="stylesheet" href="http://fonts.googleapis.com/icon?family=Material+Icons" />
 	<link rel="stylesheet" href="/css/materialize.min.css" />
 	<link rel="stylesheet" href="/css/estilo.css" />
@@ -37,12 +35,14 @@
 				</nav>
 				<div class="hide-on-small-only col l2 ajaxload" data-ajax="/anuncios/random/4"></div>
 				<div class="col s12 l8 center" id="logo"></div>
-				<div class="hide-on-small-only col l2" style="height:154px; overflow: hidden;">
+				<div class="hide-on-med-and-down col l2">
 
-
-<a href="https://www.accuweather.com/es/mx/guanajuato/243360/weather-forecast/243360" class="aw-widget-legal">
-</a><div id="awcc1497976156916" class="aw-widget-current"  data-locationkey="243360" data-unit="c" data-language="es" data-useip="false" data-uid="awcc1497976156916"></div><script type="text/javascript" src="https://oap.accuweather.com/launch.js"></script>
-
+				<div style="height:154px; overflow: hidden;">
+					<a href="https://www.accuweather.com/es/mx/guanajuato/243360/weather-forecast/243360" class="aw-widget-legal"></a>
+					<div id="awcc1497976156916" class="aw-widget-current"  data-locationkey="243360" data-unit="c" data-language="es" 
+					data-useip="false" data-uid="awcc1497976156916"></div>
+					<script type="text/javascript" src="https://oap.accuweather.com/launch.js"></script>
+				</div>
 
 				</div>
 				<div class="row">

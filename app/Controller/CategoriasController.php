@@ -14,7 +14,7 @@ class CategoriasController extends AppController {
 		$this->Categoria->hasMany['Nota']['limit']=5;
 
 		$this->set('editorial', $this->Categoria->Nota->find('first',[
-			'order'=>'Nota.created',
+			'order'=>'Nota.created desc',
 			'conditions'=>['Nota.categoria_id'=>'4'],
 			]));
 
