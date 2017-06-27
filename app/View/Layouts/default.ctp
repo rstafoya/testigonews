@@ -18,6 +18,13 @@
 
 	<title><?php echo $this->fetch('title'); ?></title>
 </head>
+<style>
+	.imagen{
+		display: inline-block;
+		width: 16px;
+		height: 16px;
+	}
+</style>
 <body>
 	<div class="container">
 		<header>
@@ -30,15 +37,13 @@
 						</ul>
 						<ul class="right">
 							<li><a href="#">1 USD = <?php echo file_get_contents(Configure::read('App.www_root').'dolar.txt'); ?> MNX</a href="#"></li>
-							<li><a href="http://fb.me/TestigoNewsBajio"><img src="/img/icono_facebook.png"></a></li>
-							<li><a href="http://twitter.com/TestigoBajio"><img src="/img/icono_twitter.png" ></a></li>
+							<li><a href="http://fb.me/TestigoNewsBajio"><span class="imagen" style="background: url(/img/icono_facebook.png)"></span></a></li>
+							<li><a href="http://twitter.com/TestigoBajio"><span class="imagen" style="background: url(/img/icono_twitter.png)"></span></a></li>
 						</ul>
 					</div>
 				</nav>
 				<div class="hide-on-small-only col l2 ajaxload" data-ajax="/anuncios/random/4"></div>
-				<div class="col s12 l8 center">
-					<a href="/"><img class="responsive-img" src="/img/logotestigo.png"></a>
-				</div>
+				<div class="col s12 l8 center" id="logo"></div>
 				<div class="hide-on-small-only col l2" style="height:154px; overflow: hidden;">
 
 

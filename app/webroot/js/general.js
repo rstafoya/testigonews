@@ -1,4 +1,5 @@
 $(document).ready(function(){
+	$("#logo").append('<a href="/"><img class="responsive-img" src="/img/logotestigo.png"></a>')
 	$(".slider").slider();
 
 	/////////////////////////////////////////////////////////////

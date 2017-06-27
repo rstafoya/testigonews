@@ -25,7 +25,6 @@
 			<div class="col s12">
 				<h4><?=$nota['Nota']['titulo']?></h4>
 				<p>
-					<img src="<?=$nota['Nota']['imagen_de_portada']?>" width=1>
 					por <strong><?=$nota['User']['nombre'].'</strong> el '.$nota['Nota']['fecha_de_publicacion']?>
 					en <a href="/categorias/ver/<?=$nota['Categoria']['id']?>"><?=$nota['Categoria']['nombre']?></a>
 				</p>
