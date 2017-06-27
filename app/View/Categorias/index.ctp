@@ -17,16 +17,22 @@
 		height:190px;
 		font-size: 90%;
 	}
+	.altura span{
+		font-size: 90%;
+		height: 40%;
+		overflow-y: hidden;
+		line-height: 17px;
+    }
 </style>
 <!--    Galería de las últimas cuatro notas    -->
 <div class="row hide-on-small-only">
-	<div class="col m2 s12 peque">
+	<div class="col m4 l2 peque">
 		<?php if(isset($editorial['Nota'])): ?>
-			<h5><?=$editorial['Nota']['titulo']?></h5>
-			<p><?=nl2br($editorial['Nota']['resumen'])?></p>
+			<a href="/nota/<?=$editorial['Nota']['ruta']?>"><h5><?=$editorial['Nota']['titulo']?></h5>
+				<p><?=nl2br($editorial['Nota']['resumen'])?></p></a>
 		<?php endif; ?>
 	</div>
-	<div class="col m6 s12" id="elmaximo">
+	<div class="col l6 hide-on-med-and-down" id="elmaximo">
 		<div class="slider">
 			<ul class="slides">
 				<?php foreach($ultimos as $u):?>
@@ -43,7 +49,7 @@
 		</div>
 	</div>
 	<!-- Las mismas noticias, pero en cuadritos -->
-	<div class="col m4">
+	<div class="col m8 l4">
 		<div class="row">
 			<?php foreach($ultimos as $u):?>
 				<div class="col s6 cuadrito">

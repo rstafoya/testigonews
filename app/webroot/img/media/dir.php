@@ -151,9 +151,9 @@ if (isset($_FILES["archivo_a_subir"])) {         // SUBIR ARCHIVO
 		});
 
 		$(".miniatura").click(function(event) {
-			$(".imagenseleccionada").attr({'src': $(this).attr('src'),'width':700});
+			$(".imagenseleccionada").attr({'src': $(this).attr('src'),'width':$("#altura").val()});
 			$(".sombra.seleccionar").fadeIn();
-			$("#codigo").val("<img width=700 src='"+$(".imagenseleccionada").attr('src')+"'>")
+			$("#codigo").val("<img width="+$("#altura").val()+" src='"+$(".imagenseleccionada").attr('src')+"'>")
 			$("#imagen_src").val($(".imagenseleccionada").attr('src'))
 		});
 

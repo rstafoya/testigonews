@@ -7,6 +7,12 @@
 	#contenedor{
 		margin-top: 5px;
 	}
+	#NotaContenido{
+		color:#ffb !important;
+		font-size: 13px;
+		line-height: 100%;
+		background: brown;
+	}
 </style>
 <div class="row">
 	<div class="col s12">
