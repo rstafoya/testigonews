@@ -10,6 +10,7 @@
 	$this->Html->meta(['name'	=>	'twitter:description',	'value'	=>	substr($nota['Nota']['resumen'],0,199)],'',['inline' => false]);
 	$this->Html->meta(['name'	=>	'twitter:creator',		'value'	=>	'@TestigoBajio'],'',['inline' => false]);
 	$this->Html->meta(['name'	=>	'twitter:image',		'value'	=>	'http://testigonewsbajio.mx'.$nota['Nota']['imagen_de_portada']],'',['inline' => false]);
+	$this->Html->meta(['name'	=>	'og:image',				'value'	=>	'http://testigonewsbajio.mx'.$nota['Nota']['imagen_de_portada']],'',['inline'=>false]);
 
 	$this->Html->meta(['property'	=>	'og:url',			'value'	=>	'http://testigonewsbajio.mx/nota/'.$nota['Nota']['ruta']],'',['inline'=>false]);
 	$this->Html->meta(['property'	=>	'og:type',			'value'	=>	'article'],'',['inline'=>false]);
