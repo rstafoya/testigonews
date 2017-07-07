@@ -122,6 +122,9 @@ class NotasController extends AppController {
 	}
 	/***********************************************************/
 	public function ver($ruta) {
+		if (empty($this->request->params['ruta'])) {
+			$this->redirect('/');
+		}
 		$ruta=$this->request->params['ruta'];
 		$opciones = ['conditions'=>['Nota.ruta'=>$ruta]];
 
