@@ -11,7 +11,7 @@ class CategoriasController extends AppController {
 		$this->set("title_for_layout","Testigo News Bajío");
 
 		$this->Categoria->recursive = 1;
-		$this->Categoria->hasMany['Nota']['limit']=5;
+		$this->Categoria->hasMany['Nota']['limit']=6;
 
 		$this->set('editorial', $this->Categoria->Nota->find('first',[
 			'order'=>'Nota.created desc',
@@ -23,7 +23,7 @@ class CategoriasController extends AppController {
 			'order'=>'Nota.id desc',
 			]));
 
-		$this->Categoria->hasMany['Nota']['order']='Nota.id desc';
+		$this->Categoria->hasMany['Nota']['order']='Nota.id asc';
 		$this->set('categorias', $this->Categoria->find('all'));
 	}
 	/***********************************************************/

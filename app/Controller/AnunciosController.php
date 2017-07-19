@@ -75,7 +75,11 @@ class AnunciosController extends AppController {
 		$this->layout='ajax';
 		$this->set("data",$this->Anuncio->find('first',[
 			'order'=>'rand()',
-			'conditions'=>['Anuncio.tipo_id'=>$tipo],
+			'conditions'=>[
+				'Anuncio.tipo_id'    => $tipo,
+				'Anuncio.inicio <= ' => date('Y-m-d'),
+				'Anuncio.final >= '  => date('Y-m-d'),
+				],
 			'recursive'=>-1
 			]));
 	}

@@ -23,6 +23,9 @@
 		overflow-y: hidden;
 		line-height: 17px;
     }
+    .notitas{
+    	margin-bottom: 5px;
+    }
 </style>
 <!--    Galería de las últimas cuatro notas    -->
 <div class="row hide-on-small-only">
@@ -88,9 +91,9 @@
 					<?php foreach($cat['Nota'] as $nota):?>
 						<?php if(($j++)==0):?>
 							<div class="col m5 notitas hide-on-med-and-up">
-							<?php else:?>
-								<div class="col m5 notitas">
-								<?php endif;?>
+						<?php else:?>
+							<div class="col m5 notitas">
+						<?php endif;?>
 								<div class="row" style="margin-bottom: 0px;">
 									<a href="/nota/<?=$nota['ruta']?>">
 										<div class="col s4">
