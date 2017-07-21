@@ -23,7 +23,7 @@ class CategoriasController extends AppController {
 			'order'=>'Nota.id desc',
 			]));
 
-		$this->Categoria->hasMany['Nota']['order']='Nota.id asc';
+		$this->Categoria->hasMany['Nota']['order']='Nota.id desc';
 		$this->set('categorias', $this->Categoria->find('all'));
 	}
 	/***********************************************************/

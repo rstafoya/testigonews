@@ -35,7 +35,7 @@ class Categoria extends AppModel {
 			'dependent' => false,
 			'conditions' => '',
 			'fields' => '',
-			'order' => '',
+			'order' => 'Nota.created desc',
 			'limit' => '',
 			'offset' => '',
 			'exclusive' => '',
